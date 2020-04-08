@@ -19,6 +19,7 @@
    "auto_complete_cycle": true,
    "auto_find_in_selection": true,
    "drag_text": false,
+   "color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard).sublime-color-scheme",
 
    // User interface settings
    "scroll_speed": 1.5,
@@ -26,8 +27,26 @@
    "bold_folder_labels": true,
    "overlay_scroll_bars": "disabled",
    "show_encoding": true,
+   "theme": "gruvbox.sublime-theme",
 
    // Application behaviour settings
    "remember_full_screen": true,
    "show_full_path": true,
+
+   // Theme settings
+   "theme": "gruvbox.sublime-theme",
+   "gruvbox_animate_icons": true,
+   "gruvbox_buttons_font_size_12": true,
+   "gruvbox_colored_tooltips": true,
+   "gruvbox_command_palette_compact": true,
+   "gruvbox_disable_command_palette_row_border": true,
+   "gruvbox_disable_panels_button": true,
+   "gruvbox_highlight_active_tree_row": true,
+   "gruvbox_iconset_thick": true,
+   "gruvbox_panel_s": true,
+   "gruvbox_sidebar_heading_bold": true,
+   "gruvbox_statusbar_button_xxs": true,
+   "gruvbox_statusbar_xxs": true,
+   "gruvbox_tabs_font_size_12": true,
+   "gruvbox_tabs_xs": true,
 }
