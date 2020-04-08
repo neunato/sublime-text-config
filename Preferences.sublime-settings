@@ -1,0 +1,33 @@
+{
+   // Editor settings
+   "line_numbers": false,
+   "margin": 0,
+   "tab_size": 3,
+   "translate_tabs_to_spaces": true,
+   "word_wrap": false,
+   "indent_subsequent_lines": true,
+   "always_show_minimap_viewport": true,
+   "caret_extra_top": 0,
+   "caret_extra_bottom": 0,
+   "scroll_past_end": false,
+   "draw_indent_guides": false,
+   "trim_trailing_white_space_on_save": true,
+   "ensure_newline_at_eof_on_save": true,
+   "default_line_ending": "unix",
+   "auto_complete_delay": 0,
+   "auto_complete_commit_on_tab": true,
+   "auto_complete_cycle": true,
+   "auto_find_in_selection": true,
+   "drag_text": false,
+
+   // User interface settings
+   "scroll_speed": 1.5,
+   "tree_animation_enabled": false,
+   "bold_folder_labels": true,
+   "overlay_scroll_bars": "disabled",
+   "show_encoding": true,
+
+   // Application behaviour settings
+   "remember_full_screen": true,
+   "show_full_path": true,
+}
