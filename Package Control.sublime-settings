@@ -6,6 +6,8 @@
 	"installed_packages":
 	[
 		"gruvbox",
-		"Package Control"
+		"Package Control",
+		"PackageDev",
+		"PackageResourceViewer"
 	]
 }
