@@ -6,8 +6,12 @@
 	"installed_packages":
 	[
 		"gruvbox",
+		"LESS",
 		"Package Control",
 		"PackageDev",
-		"PackageResourceViewer"
+		"PackageResourceViewer",
+		"Sass",
+		"TypeScript Syntax",
+		"Vue Syntax Highlight"
 	]
 }
