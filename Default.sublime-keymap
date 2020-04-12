@@ -338,6 +338,7 @@
    { "keys": ["escape"], "command": "hide_auto_complete", "context": [{ "key": "auto_complete_visible", "operator": "equal", "operand": true }] },
    { "keys": ["tab"], "command": "insert_best_completion", "args": {"default": "\t", "exact": true} },
    { "keys": ["tab"], "command": "insert_best_completion", "args": {"default": "\t", "exact": false}, "context": [{ "key": "setting.tab_completion", "operator": "equal", "operand": true }, { "key": "preceding_text", "operator": "not_regex_match", "operand": ".*\\b[0-9]+$", "match_all": true }]},
+   { "keys": ["tab"], "command": "select", "context": [{ "key": "overlay_visible", "operator": "equal", "operand": true }] },
    { "keys": ["tab"], "command": "replace_completion_with_next_completion", "context": [{ "key": "last_command", "operator": "equal", "operand": "insert_best_completion" }, { "key": "setting.tab_completion", "operator": "equal", "operand": true } ] },
    { "keys": ["tab"], "command": "reindent", "context": [{ "key": "setting.auto_indent", "operator": "equal", "operand": true }, { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true }, { "key": "preceding_text", "operator": "regex_match", "operand": "^$", "match_all": true }, { "key": "following_text", "operator": "regex_match", "operand": "^$", "match_all": true } ] },
    { "keys": ["tab"], "command": "indent", "context": [{ "key": "text", "operator": "regex_contains", "operand": "\n" } ] },
@@ -361,6 +362,9 @@
    { "keys": ["ctrl+down"], "command": "swap_line_down" },
    { "keys": ["ctrl+shift+down"], "command": "swap_line_down" },
    { "keys": ["ctrl+backspace"], "command": "delete_word", "args": { "forward": false } },
+   { "keys": ["alt+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard BOL.sublime-macro"} },
+   { "keys": ["ctrl+delete"], "command": "delete_word", "args": { "forward": true } },
+   { "keys": ["alt+delete"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard EOL.sublime-macro"} },
    { "keys": ["alt+c"], "command": "toggle_comment", "args": { "block": false } },
    { "keys": ["ctrl+e"], "command": "join_lines" },
    { "keys": ["ctrl+d"], "command": "duplicate_line" },
@@ -691,4 +695,13 @@
    { "keys": ["ctrl+g"], "command": "find_all", "context": [{"key": "panel", "operand": "find_in_files"}, {"key": "panel_has_focus"}] },
    { "keys": ["ctrl+r"], "command": "replace_all", "context": [{"key": "panel", "operand": "find_in_files"}, {"key": "panel_has_focus"}] },
    { "keys": ["ctrl+t"], "command": "replace_all", "context": [{"key": "panel", "operand": "find_in_files"}, {"key": "panel_has_focus"}] },
+
+   // HTML, XML close tag
+   { "keys": ["/"], "command": "close_tag", "args": { "insert_slash": true }, "context":
+      [
+         { "key": "selector", "operator": "equal", "operand": "(text.html, text.xml) - string - comment", "match_all": true },
+         { "key": "preceding_text", "operator": "regex_match", "operand": ".*<$", "match_all": true },
+         { "key": "setting.auto_close_tags" }
+      ]
+   }
 ]

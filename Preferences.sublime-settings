@@ -28,13 +28,13 @@
    "overlay_scroll_bars": "disabled",
    "show_encoding": true,
    "theme": "gruvbox.sublime-theme",
+   "context_menu": "_",
 
    // Application behaviour settings
    "remember_full_screen": true,
    "show_full_path": true,
 
    // Theme settings
-   "theme": "gruvbox.sublime-theme",
    "gruvbox_animate_icons": true,
    "gruvbox_buttons_font_size_12": true,
    "gruvbox_colored_tooltips": true,
