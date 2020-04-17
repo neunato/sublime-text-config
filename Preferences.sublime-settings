@@ -49,4 +49,7 @@
    "gruvbox_statusbar_xxs": true,
    "gruvbox_tabs_font_size_12": true,
    "gruvbox_tabs_xs": true,
+
+   // My settings
+   "_trim_file_on_save": true
 }
