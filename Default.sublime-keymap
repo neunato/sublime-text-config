@@ -665,14 +665,10 @@
 
    { "keys": ["ctrl+q"], "command": "toggle_case" },
 
-   { "keys": ["f1"], "command": "fold_by_level", "args": {"level": 1} },
-   { "keys": ["f2"], "command": "fold_by_level", "args": {"level": 2} },
-   { "keys": ["f3"], "command": "fold_by_level", "args": {"level": 3} },
-   { "keys": ["f4"], "command": "fold_by_level", "args": {"level": 4} },
-   { "keys": ["shift+f1"], "command": "unfold_all" },
-   { "keys": ["shift+f2"], "command": "unfold_all" },
-   { "keys": ["shift+f3"], "command": "unfold_all" },
-   { "keys": ["shift+f4"], "command": "unfold_all" },
+   { "keys": ["f1"], "command": "toggle_fold_by_level", "args": {"level": 1} },
+   { "keys": ["f2"], "command": "toggle_fold_by_level", "args": {"level": 2} },
+   { "keys": ["f3"], "command": "toggle_fold_by_level", "args": {"level": 3} },
+   { "keys": ["f4"], "command": "toggle_fold_by_level", "args": {"level": 4} },
 
    { "keys": ["alt+f1"], "command": "toggle_regex", "context": [{ "key": "setting.is_widget", "operator": "equal", "operand": true }] },
    { "keys": ["alt+f2"], "command": "toggle_case_sensitive", "context": [{ "key": "setting.is_widget", "operator": "equal", "operand": true }] },
