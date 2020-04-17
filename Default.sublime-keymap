@@ -366,7 +366,7 @@
    { "keys": ["ctrl+delete"], "command": "delete_word", "args": {"forward": true} },
    { "keys": ["alt+delete"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard EOL.sublime-macro"} },
    { "keys": ["alt+c"], "command": "toggle_comment", "args": {"block": false} },
-   { "keys": ["ctrl+e"], "command": "join_lines" },
+   { "keys": ["ctrl+e"], "command": "join_lines_ext" },
    { "keys": ["ctrl+d"], "command": "duplicate_line" },
    { "keys": ["¸"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
    { "keys": ["¨"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
