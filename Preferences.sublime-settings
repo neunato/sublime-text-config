@@ -4,6 +4,7 @@
    "margin": 0,
    "tab_size": 3,
    "translate_tabs_to_spaces": true,
+   "detect_indentation": false,
    "word_wrap": false,
    "indent_subsequent_lines": true,
    "always_show_minimap_viewport": true,
@@ -51,5 +52,6 @@
    "gruvbox_tabs_xs": true,
 
    // My settings
-   "_trim_file_on_save": true
+   "_trim_file_on_save": true,
+   "_auto_convert_indentation": true,
 }
