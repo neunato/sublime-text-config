@@ -312,6 +312,8 @@
    { "keys": ["alt+shift+right"], "command": "move", "args": {"by": "subword_ends", "forward": true, "extend": true} },
    { "keys": ["alt+up"], "command": "select_lines", "args": {"forward": false} },
    { "keys": ["alt+down"], "command": "select_lines", "args": {"forward": true} },
+   { "keys": ["alt+shift+up"], "command": "unselect_lines", "args": {"forward": true} },
+   { "keys": ["alt+shift+down"], "command": "unselect_lines", "args": {"forward": false} },
    { "keys": ["pageup"], "command": "move", "args": {"by": "pages", "forward": false} },
    { "keys": ["pagedown"], "command": "move", "args": {"by": "pages", "forward": true} },
    { "keys": ["shift+pageup"], "command": "move", "args": {"by": "pages", "forward": false, "extend": true} },
