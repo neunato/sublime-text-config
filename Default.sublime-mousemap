@@ -60,8 +60,8 @@
 
    // Drag select by paragraph
    { "button": "button3", "command": "expand_selection_to_paragraph", "press_command": "drag_select" },
-   { "button": "button3", "modifiers": ["ctrl"], "command": "expand_selection_to_paragraph", "press_command": "drag_select", "press_args": {"additive": true}},
-   // { "button": "button3", "modifiers": ["alt"], "command": "unexpand_selection_to_paragraph", "press_command": "drag_select", "press_args": {"subtractive": true}},
+   { "button": "button3", "modifiers": ["ctrl"], "command": "expand_selection_to_paragraph", "press_command": "drag_select", "press_args": {"additive": true} },
+   { "button": "button3", "modifiers": ["alt"], "command": "expand_selection_to_paragraph_sub", "press_command": "drag_select", "press_args": {"subtractive": true} },
 
    // Mouse 2 column select
    { "button": "button2", "press_command": "drag_select", "press_args": {"by": "columns"} },
