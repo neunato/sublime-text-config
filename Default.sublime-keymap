@@ -283,6 +283,8 @@
    { "keys": ["ctrl+shift+s"], "command": "prompt_save_as" },
    { "keys": ["ctrl+w"], "command": "close" },
    { "keys": ["ctrl+shift+w"], "command": "reopen_last_file" },
+   { "keys": ["ctrl+q"], "command": "close_to_right_by_index_ext" },
+   { "keys": ["ctrl+shift+q"], "command": "close_others_by_index_ext" },
    { "keys": ["backspace"], "command": "left_delete" },
    { "keys": ["shift+backspace"], "command": "left_delete" },
    { "keys": ["ctrl+shift+backspace"], "command": "left_delete" },
