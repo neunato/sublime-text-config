@@ -10,6 +10,6 @@ class JoinLinesExtCommand(TextCommand):
             continue
          sel = view.substr(reg)
          if "\n" in sel:
-            view.run_command("join_lines")
+            view.replace(edit, reg, re.sub("\s*\n\s*", " ", sel))
          else:
             view.replace(edit, reg, re.sub("\s+", " ", sel))
