@@ -275,10 +275,10 @@
 
    //////////////////////////////////////////////////
 
-   { "keys": ["ctrl+shift+n"], "command": "new_window" },
+   { "keys": ["ctrl+n"], "command": "new_window" },
    { "keys": ["ctrl+o"], "command": "prompt_open_file" },
    { "keys": ["ctrl+p"], "command": "prompt_select_workspace" },
-   { "keys": ["ctrl+n"], "command": "new_file" },
+   { "keys": ["ctrl+t"], "command": "new_file" },
    { "keys": ["ctrl+s"], "command": "save" },
    { "keys": ["ctrl+shift+s"], "command": "prompt_save_as" },
    { "keys": ["ctrl+w"], "command": "close" },
@@ -336,7 +336,8 @@
    { "keys": ["escape"], "command": "move", "args": {"by": "characters", "forward": false}, "context": [{ "key": "selection_empty", "operator": "equal", "operand": false, "match_all": true }] },
    { "keys": ["escape"], "command": "clear_fields", "context": [{ "key": "has_next_field", "operator": "equal", "operand": true }] },
    { "keys": ["escape"], "command": "clear_fields", "context": [{ "key": "has_prev_field", "operator": "equal", "operand": true }] },
-   { "keys": ["escape"], "command": "hide_panel", "args": {"cancel": true}, "context": [{ "key": "panel_visible", "operator": "equal", "operand": true }] },
+   { "keys": ["escape"], "command": "hide_panel", "args": {"cancel": true}, "context": [{ "key": "panel_visible", "operator": "equal", "operand": true }, { "key": "panel_has_focus", "operator": "equal", "operand": false }, { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true }] },
+   { "keys": ["escape"], "command": "hide_panel", "args": {"cancel": true}, "context": [{ "key": "panel_visible", "operator": "equal", "operand": true }, { "key": "panel_has_focus", "operator": "equal", "operand": true }] },
    { "keys": ["escape"], "command": "hide_overlay", "context": [{ "key": "overlay_visible", "operator": "equal", "operand": true }] },
    { "keys": ["escape"], "command": "hide_popup", "context": [{ "key": "popup_visible", "operator": "equal", "operand": true }] },
    { "keys": ["escape"], "command": "hide_auto_complete", "context": [{ "key": "auto_complete_visible", "operator": "equal", "operand": true }] },
@@ -667,8 +668,6 @@
 
    { "keys": ["alt+x"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
 
-   { "keys": ["ctrl+q"], "command": "toggle_case" },
-
    { "keys": ["f1"], "command": "toggle_fold_by_level", "args": {"level": 1} },
    { "keys": ["f2"], "command": "toggle_fold_by_level", "args": {"level": 2} },
    { "keys": ["f3"], "command": "toggle_fold_by_level", "args": {"level": 3} },
@@ -729,7 +728,8 @@
          { "key": "terminus_view" },
          { "key": "terminus_view.closed", "operator": "not_equal", "operand": true },
          { "key": "overlay_visible", "operator": "equal", "operand": false },
-         { "key": "popup_visible", "operator": "equal", "operand": false }
+         { "key": "popup_visible", "operator": "equal", "operand": false },
+         { "key": "panel_visible", "operator": "equal", "operand": false },
      ] },
    { "keys": ["tab"], "command": "terminus_keypress", "args": {"key": "tab"}, "context": [{"key": "terminus_view"}] },
    { "keys": ["space"], "command": "terminus_keypress", "args": {"key": "space"}, "context": [{"key": "terminus_view"}] },
@@ -777,7 +777,7 @@
    // Basic ctrl + key combinations. Note that ctrl+k is not enabled by default to avoid shadowing the many shortcuts it is used with,
    { "keys": ["ctrl+a"], "command": "terminus_keypress", "args": {"key": "a", "ctrl": true}, "context": [{"key": "terminus_view"}] },
    { "keys": ["ctrl+b"], "command": "terminus_keypress", "args": {"key": "b", "ctrl": true}, "context": [{"key": "terminus_view"}] },
-   { "keys": ["ctrl+c"], "command": "terminus_keypress", "args": {"key": "c", "ctrl": true}, "context": [{"key": "terminus_view"}] },
+   { "keys": ["ctrl+c"], "command": "terminus_keypress", "args": {"key": "c", "ctrl": true}, "context": [{"key": "terminus_view"}, { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true }] },
    { "keys": ["ctrl+d"], "command": "terminus_keypress", "args": {"key": "d", "ctrl": true}, "context": [{"key": "terminus_view"}] },
    { "keys": ["ctrl+e"], "command": "terminus_keypress", "args": {"key": "e", "ctrl": true}, "context": [{"key": "terminus_view"}] },
    // { "keys": ["ctrl+f"], "command": "terminus_keypress", "args": {"key": "f", "ctrl": true}, "context": [{"key": "terminus_view"}] },

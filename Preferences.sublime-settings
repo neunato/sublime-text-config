@@ -1,5 +1,7 @@
 {
    // Editor settings
+   "color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
+   "font_size": 10,
    "line_numbers": false,
    "margin": 0,
    "tab_size": 3,
@@ -20,16 +22,15 @@
    "auto_complete_cycle": true,
    "auto_find_in_selection": true,
    "drag_text": false,
-   "color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
 
    // User interface settings
    "scroll_speed": 1.5,
    "tree_animation_enabled": false,
+   "show_tab_close_buttons": false,
    "bold_folder_labels": true,
    "overlay_scroll_bars": "disabled",
    "show_encoding": true,
    "theme": "gruvbox.sublime-theme",
-   "context_menu": "_",
 
    // Application behaviour settings
    "remember_full_screen": true,
@@ -37,6 +38,8 @@
 
    // Theme settings
    "gruvbox_animate_icons": true,
+   "gruvbox_autocomplete_cramped": true,
+   "gruvbox_autocomplete_border": true,
    "gruvbox_buttons_font_size_12": true,
    "gruvbox_colored_tooltips": true,
    "gruvbox_command_palette_compact": true,
