@@ -10,7 +10,8 @@ class ToggleCaseCommand(TextCommand):
          if reg.empty():
             continue
          sel = view.substr(reg)
-         if sel[0].isupper():
+         char = sel.lstrip()[0]
+         if char.isupper():
             view.replace(edit, reg, sel.lower())
          else:
             view.replace(edit, reg, sel.upper())
