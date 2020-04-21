@@ -1,0 +1,53 @@
+[style] font_size++ in command palette (hmm, in a nested one, like view package file's list, is that package specific or general?)
+[keybind] ctrl+space fucked up in python syntax
+[keybind] remove keybindings of added packages!
+[keybind] f10 show scope name
+[keybind] toggle_case
+[keybind] rebind [] () {}
+[keybind] terminus reset + clear
+[keybind] ??? change syntax
+[keybind] ??? move file to group
+[keybind] ??? open replace panel with either [ctrl+f] or [ctrl+r]
+[keybind] ??? fold tag (xml) attributes
+[terminus][keybind/plugin] mouse selection
+[terminus][keybind/plugin] ctrl+shift+left/right caught by sublime, we want a terminal selection 
+[terminus][setting/plugin] creating a new tab when not in project must inherit current cwd from the current terminal (as file's path works)
+[terminus][style] padding since no line numbers (maybe add some generally, to any tab)
+[terminus][style] disable "word wrap" -> set a min col width?
+[terminus][style] tab colour should reflect bg colour... or some other kind of indicator
+
+
+MENUS
+- Main (mnemonics, try hiding it with no alt+ conflicts)
+- Side Bar Mount Point
+- Side Bar
+- Tab Context
+- Context (sort lines?, unique lines?, reverse lines?, shuffle lines?)
+- Find in Files
+- Widget Context (...Technically this file name can be changed via the "context_menu" setting inside of Widget.sublime-settings. - CHECK IF THIS IS TRUE FOR ALL OF THEM (hmm, all contexts at least), THAT IS, WHY DOES Default.sublime-preferences' context_menu REFER TO Context.sublime-menu...)
+
+
+PLUGINS
+[ ] replace_prev
+[ ] find_under_prev_expand [alt+shif+f] => find_under_prev exists but it does not expand the selection... (https://github.com/adamchainz/SublimeSuperMultiSelect/blob/master/find_under_prev.py)
+[ ] make find_under[_expand] always match case and whole word (since only those are highlighted)! (https://github.com/evandrocoan/HighlightWordsOnSelection or if that is an overkill, try it by quickly changing the settings, making the call, and returning the settings. would that work?)
+---
+[ ] keep undo history after closing
+[ ] start new windows in fullscreen (or same size as main window)
+[ ] improve curly brackets auto pairing (simply wrap text that follows until a newline or same level indentation?), careful not to fuck (js) objects up
+[ ] i know there is something bothering me about quote auto-pairing, when mixing ' and "
+[ ] closing search panel should take us (the cursor) back where we were (if no edits performed?); maybe navigating back will be sufficient, will see
+
+
+PACKAGES
+- HyperClick (https://packagecontrol.io/packages/HyperClick)
+- SublimeLinter (https://packagecontrol.io/packages/SublimeLinter) + language specific linters
+- ??? LSP (https://packagecontrol.io/packages/LSP) + language specific servers
+- hex file editor
+- a colour highlighter
+- a colour picker
+- a prettyfier
+
+
+USEFUL
+- https://stackoverflow.com/questions/48656430/how-to-list-all-commands-in-sublime-text-3/
