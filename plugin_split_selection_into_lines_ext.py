@@ -2,7 +2,11 @@ from sublime import Region
 from sublime_plugin import TextCommand
 
 
-class SplitSelectionCommand(TextCommand):
+class SplitSelectionIntoLinesExtCommand(TextCommand):
+   """
+   Run split_selection_into_lines on multiline selection, else split into
+   characters.
+   """
    def run(self, edit):
       view = self.view
       selection = view.sel()
@@ -20,7 +24,6 @@ class SplitSelectionCommand(TextCommand):
             size = reg.size()
             regs = [Region(pos+i, pos+i+1) for i in range(size)]
             selection.subtract(reg)
-            for reg in regs:
-               selection.add(reg)
+            selection.add_all(regs)
          else:
             view.run_command("split_selection_into_lines")

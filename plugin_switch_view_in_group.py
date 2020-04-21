@@ -2,11 +2,17 @@ from sublime_plugin import WindowCommand
 
 
 class NextViewInGroupCommand(WindowCommand):
+   """
+   Select the next neighbouring file within group.
+   """
    def run(self):
       switch_view_in_group(self.window, forward=True)
 
 
 class PrevViewInGroupCommand(WindowCommand):
+   """
+   Select the previous neighbouring file within group.
+   """
    def run(self):
       switch_view_in_group(self.window, forward=False)
 

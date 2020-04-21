@@ -2,6 +2,12 @@ from sublime_plugin import TextCommand
 
 
 class ToggleCaseCommand(TextCommand):
+   """
+   Swap case of characters in selection based on first non-whitespace
+   character.
+
+   Work on word if selection is empty.
+   """
    def run(self, edit):
       view = self.view
       for reg in view.sel():

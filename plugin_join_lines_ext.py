@@ -1,8 +1,12 @@
-import re
+from re import sub
 from sublime_plugin import TextCommand
 
 
 class JoinLinesExtCommand(TextCommand):
+   """
+   Run join_lines on multiline selection, else remove whitespace from
+   selection.
+   """
    def run(self, edit):
       view = self.view
       for reg in view.sel():
@@ -10,6 +14,6 @@ class JoinLinesExtCommand(TextCommand):
             continue
          sel = view.substr(reg)
          if "\n" in sel:
-            view.replace(edit, reg, re.sub("\s*\n\s*", " ", sel))
+            view.replace(edit, reg, sub("\s*\n\s*", " ", sel))
          else:
-            view.replace(edit, reg, re.sub("\s+", " ", sel))
+            view.replace(edit, reg, sub("\s+", " ", sel))

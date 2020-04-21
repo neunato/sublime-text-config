@@ -2,6 +2,9 @@ from sublime_plugin import TextCommand
 
 
 class UnfoldByLevelCommand(TextCommand):
+   """
+   Unfold regions of given indentation level.
+   """
    def run(self, _, level):
       view = self.view
       level = int(level) - 1
@@ -11,6 +14,11 @@ class UnfoldByLevelCommand(TextCommand):
 
 
 class ToggleFoldByLevelCommand(TextCommand):
+   """
+   Fold/unfold regions of given indentation level.
+
+   If folded regions exist they are unfolded, else code is folded.
+   """
    def run(self, _, level):
       view = self.view
       level = int(level) - 1

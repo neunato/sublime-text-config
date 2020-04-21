@@ -311,7 +311,7 @@
    { "keys": ["ctrl+tab"], "command": "next_view_in_group" },
    { "keys": ["ctrl+shift+tab"], "command": "prev_view_in_group" },
    { "keys": ["ctrl+a"], "command": "select_all" },
-   { "keys": ["alt+s"], "command": "split_selection" },
+   { "keys": ["alt+s"], "command": "split_selection_into_lines_ext" },
    { "keys": ["escape"], "command": "single_selection", "context": [{ "key": "num_selections", "operator": "not_equal", "operand": 1 }] },
    { "keys": ["escape"], "command": "move", "args": {"by": "characters", "forward": false}, "context": [{ "key": "selection_empty", "operator": "equal", "operand": false, "match_all": true }] },
    { "keys": ["escape"], "command": "clear_fields", "context": [{ "key": "has_next_field" }] },

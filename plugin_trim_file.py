@@ -3,6 +3,11 @@ from sublime_plugin import TextCommand, EventListener
 
 
 class TrimFileCommand(TextCommand):
+   """
+   Remove leading and trailing whitespace from a file.
+
+   Run on save based on _trim_file_on_save setting.
+   """
    def run(self, edit, bof=True, eof=True):
       view = self.view
 

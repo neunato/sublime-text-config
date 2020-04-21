@@ -1,9 +1,15 @@
-from os import path
-import sublime
+from os.path import normpath
+from sublime import packages_path, load_resource, decode_value, windows
 from sublime_plugin import TextCommand, EventListener
 
 
 class ConvertIndentationCommand(TextCommand):
+   """
+   Convert indentation to reflect the user's settings.
+
+   Run automatically based on _auto_convert_indentation setting.
+   """
+
    def run(self, _):
       view = self.view
       if view.is_read_only():
@@ -58,26 +64,25 @@ class ConvertIndentationListener(EventListener):
 
    # convert indentation when view changes its settings
    def on_post_text_command(self, view, command, args):
-      settings = view.settings()
-      auto_indent = settings.get("_auto_convert_indentation")
-      if not auto_indent:
-         return
       if command not in ("set_setting", "toggle_setting"):
          return
       if args.get("setting") not in ("tab_size", "translate_tabs_to_spaces"):
          return
-      view.run_command("convert_indentation")
+      settings = view.settings()
+      auto_indent = settings.get("_auto_convert_indentation")
+      if auto_indent:
+         view.run_command("convert_indentation")
 
 
    # convert indentation in open files when Preferences.sublime-settings change
    def on_post_save(self, view):
-      settings_path = path.normpath(sublime.packages_path() + "/User/Preferences.sublime-settings")
+      settings_path = normpath(packages_path() + "/User/Preferences.sublime-settings")
       file_name = view.file_name()
       if file_name != settings_path:
          return
 
-      settings = sublime.load_resource("Packages/User/Preferences.sublime-settings")
-      settings = sublime.decode_value(settings)
+      settings = load_resource("Packages/User/Preferences.sublime-settings")
+      settings = decode_value(settings)
       auto_indent = settings.get("_auto_convert_indentation")
       if not auto_indent:
          return
@@ -85,7 +90,7 @@ class ConvertIndentationListener(EventListener):
       tab_size = settings.get("tab_size")
       use_spaces = settings.get("translate_tabs_to_spaces")
 
-      views = [v for w in sublime.windows() for v in w.views()]
+      views = [v for w in windows() for v in w.views()]
       for view in views:
          view_settings = view.settings()
          view_tab_size = view_settings.get("tab_size")

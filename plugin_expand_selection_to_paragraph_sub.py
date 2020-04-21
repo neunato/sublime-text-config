@@ -3,6 +3,9 @@ from sublime_plugin import TextCommand
 
 
 class ExpandSelectionToParagraphSubCommand(TextCommand):
+   """
+   Subtract paragraph enclosing the mouse position from selection.
+   """
    def want_event(self):
       return True
 

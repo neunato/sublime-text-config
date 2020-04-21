@@ -2,6 +2,10 @@ from sublime_plugin import WindowCommand
 
 
 class SetLayoutExtCommand(WindowCommand):
+   """
+   Run set_layout and move the selected tab and all to the right to the newly
+   created group, if any.
+   """
    def run(self, **args):
       window = self.window
       active = window.active_sheet()
