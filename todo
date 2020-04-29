@@ -1,4 +1,7 @@
 always open terminus in project root (only if no project, at current file, or maybe if file not part of project)
+ctrl+shift+t <> reopen last tab
+ctrl+w <> close tab
+ctrl+shift+w <> close tabs to the right (and tab too?)
 ---
 
 [style] font_size++ in command palette (hmm, in a nested one, like view package file's list, is that package specific or general?)
