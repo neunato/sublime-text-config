@@ -1,3 +1,6 @@
+always open terminus in project root (only if no project, at current file, or maybe if file not part of project)
+---
+
 [style] font_size++ in command palette (hmm, in a nested one, like view package file's list, is that package specific or general?)
 [keybind] ctrl+space fucked up in python syntax
 [keybind] remove keybindings of added packages!
