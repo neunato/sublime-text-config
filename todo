@@ -2,6 +2,7 @@ always open terminus in project root (only if no project, at current file, or ma
 ctrl+shift+t <> reopen last tab
 ctrl+w <> close tab
 ctrl+shift+w <> close tabs to the right (and tab too?)
+alt + f1/2/3 <> toggling of find options must work outside panel (regardless of focus, selection, and openness)
 ---
 [style] font_size++ in sidebar
 [style] font_size++ in command palette (hmm, in a nested one, like view package file's list, is that package specific or general?)
