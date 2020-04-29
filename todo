@@ -1,3 +1,46 @@
+[+] find_next
+   find next occurrence of slurp_find_string and replace current selection with it
+   *RESPECTS case, whole word*
+
+[+] replace_next
+   [empty sel] - find_next
+   [non empty sel] - replace and find_next
+   *RESPECTS case, whole word*
+
+[+] find_under
+   [empty sel] - determine slurp_find_string with expand_selection {"to": "word"} (without changing the selection) and find_next
+   [non empty sel] - find_next
+   *RESPECTS case*
+   *IGNORES whole word*
+
+[+] find_under_prev
+   [empty sel] - determine slurp_find_string with expand_selection {"to": "word"} (without changing the selection) and find_prev
+   [non empty sel] - find_prev
+   *RESPECTS case*
+   *IGNORES whole word*
+
+[+] find_under_expand
+   [empty sel] - determine slurp_find_string with expand_selection {"to": "word"} and add that to the selection; enable whole word matching (for the command, not the panel in general)
+   [non empty sel] - find_next and add to selection; disable whole word matching (for the command, not the panel in general)
+   *RESPECTS case*
+   *IGNORES whole word (uses it's own logic)*
+
+[+] find_under_expand_skip
+   [empty sel] - determine slurp_find_string with expand_selection {"to": "word"} and find_next; enable whole word matching (for the command, not the panel in general) until next line
+   [non empty sel] - remove last selection, find_next and add to selection; disable whole word matching (for the command, not the panel in general)
+   *RESPECTS case*
+   *IGNORES whole word (uses it's own logic, but even that is broken)*
+   *ADDITIONAL ISSUES* broken on so many levels when first occurrences of text are not selected and we make a full circle, cant be bothered to figure this broken shit out (NE POKUŠAVAT OVO SKUŽIT AKO NOTE NEMA SMISLA!!!)
+
+-----
+[-] replace_prev
+[-] find_under_prev_expand
+-----
+
+DONT HIGHLIGHT WORDS PERFECT MATCHES (IS THERE AN OPTION??)
+manually highlight whats wanted in the visible screen...
+
+=====================================
 always open terminus in project root (only if no project, at current file, or maybe if file not part of project)
 ctrl+shift+t <> reopen last tab
 ctrl+w <> close tab
