@@ -15,6 +15,7 @@ ctrl+shift+w <> close tabs to the right (and tab too?)
 [keybind] ??? move file to group
 [keybind] ??? open replace panel with either [ctrl+f] or [ctrl+r]
 [keybind] ??? fold tag (xml) attributes
+[terminus][keybind/plugin] ctrl+shift+w that is reopening last closed tab must work on terminus
 [terminus][keybind/plugin] mouse selection
 [terminus][keybind/plugin] ctrl+shift+left/right caught by sublime, we want a terminal selection 
 [terminus][setting/plugin] creating a new tab when not in project must inherit current cwd from the current terminal (as file's path works)
