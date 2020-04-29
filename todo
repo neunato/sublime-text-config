@@ -3,7 +3,7 @@ ctrl+shift+t <> reopen last tab
 ctrl+w <> close tab
 ctrl+shift+w <> close tabs to the right (and tab too?)
 ---
-
+[style] font_size++ in sidebar
 [style] font_size++ in command palette (hmm, in a nested one, like view package file's list, is that package specific or general?)
 [keybind] ctrl+space fucked up in python syntax
 [keybind] remove keybindings of added packages!
