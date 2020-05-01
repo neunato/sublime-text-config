@@ -32,6 +32,8 @@ Command | Args | Description
 <a name="expand_selection_to_paragraph_sub"></a>[**`expand_selection_to_paragraph_sub`**][expand_selection_to_paragraph_sub] | | Subtract paragraph enclosing the mouse position from selection.
 <a name="set_find_string"></a>[**`set_find_string`**][set_find_string] | `string`: `str` | Set `string` as "find" input field of find panels.
 <a name="set_replace_string"></a>[**`set_replace_string`**][set_replace_string] | `string`: `str` | Set `string` as "replace" input field of find panels.
+<a name="slurp_find_string_ext"></a>[**`slurp_find_string_ext`**][slurp_find_string_ext] | `forward`: `bool` | Run `slurp_find_string` on first or last selection based on `forward`.
+<a name="slurp_find_string_ext"></a>[**`slurp_find_string_ext`**][slurp_replace_string_ext] | `forward`: `bool` | Run `slurp_replace_string` on first or last selection based on `forward`.
 
 
 [convert_indentation]: ./plugin_convert_indentation.py "View source"
@@ -52,3 +54,5 @@ Command | Args | Description
 [expand_selection_to_paragraph_sub]: ./plugin_expand_selection_to_paragraph_sub.py "View source"
 [set_find_string]: ./plugin_set_find_string.py "View source"
 [set_replace_string]: ./plugin_set_find_string.py "View source"
+[slurp_find_string_ext]: ./plugin_slurp_find_string_ext.py "View source"
+[slurp_replace_string_ext]: ./plugin_slurp_find_string_ext.py "View source"
