@@ -30,6 +30,8 @@ Command | Args | Description
 <a name="close_to_right_by_index_ext"></a>[**`close_to_right_by_index_ext`**][close_to_right_by_index_ext] | `group` : `int` <br> `index` : `int` | Run `close_to_right_by_index` with the active view if called without parameters. Needed for binding to a key.
 <a name="unselect_lines"></a>[**`unselect_lines`**][unselect_lines] | `forward` : `bool` | Remove first or last selection based on `forward`.
 <a name="expand_selection_to_paragraph_sub"></a>[**`expand_selection_to_paragraph_sub`**][expand_selection_to_paragraph_sub] | | Subtract paragraph enclosing the mouse position from selection.
+<a name="set_find_string"></a>[**`set_find_string`**][set_find_string] | `string`: `str` | Set `string` as "find" input field of find panels.
+<a name="set_replace_string"></a>[**`set_replace_string`**][set_replace_string] | `string`: `str` | Set `string` as "replace" input field of find panels.
 
 
 [convert_indentation]: ./plugin_convert_indentation.py "View source"
@@ -48,3 +50,5 @@ Command | Args | Description
 [close_to_right_by_index_ext]: ./plugin_close_other_tabs_ext.py "View source"
 [unselect_lines]: ./plugin_unselect_lines.py "View source"
 [expand_selection_to_paragraph_sub]: ./plugin_expand_selection_to_paragraph_sub.py "View source"
+[set_find_string]: ./plugin_set_find_string.py "View source"
+[set_replace_string]: ./plugin_set_find_string.py "View source"
