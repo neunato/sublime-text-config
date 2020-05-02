@@ -654,9 +654,9 @@
    { "keys": ["f3"], "command": "toggle_fold_by_level", "args": {"level": 3} },
    { "keys": ["f4"], "command": "toggle_fold_by_level", "args": {"level": 4} },
 
-   { "keys": ["alt+f1"], "command": "toggle_regex", "context": [{ "key": "setting.is_widget" }] },
-   { "keys": ["alt+f2"], "command": "toggle_case_sensitive", "context": [{ "key": "setting.is_widget" }] },
-   { "keys": ["alt+f3"], "command": "toggle_whole_word", "context": [{ "key": "setting.is_widget" }] },
+   { "keys": ["alt+f1"], "command": "toggle_regex_ext" },
+   { "keys": ["alt+f2"], "command": "toggle_case_sensitive_ext" },
+   { "keys": ["alt+f3"], "command": "toggle_whole_word_ext" },
 
    { "keys": ["f5"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
    { "keys": ["f6"], "command": "toggle_setting", "args": {"setting": "line_numbers"} },

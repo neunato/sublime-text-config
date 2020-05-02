@@ -34,6 +34,9 @@ Command | Args | Description
 <a name="set_replace_string"></a>[**`set_replace_string`**][set_replace_string] | `string`: `str` | Set `string` as "replace" input field of find panels.
 <a name="slurp_find_string_ext"></a>[**`slurp_find_string_ext`**][slurp_find_string_ext] | `forward`: `bool` | Run `slurp_find_string` on first or last selection based on `forward`.
 <a name="slurp_find_string_ext"></a>[**`slurp_find_string_ext`**][slurp_replace_string_ext] | `forward`: `bool` | Run `slurp_replace_string` on first or last selection based on `forward`.
+<a name="toggle_regex_ext"></a>[**`toggle_regex_ext`**][toggle_regex_ext] | | Run `toggle_regex` regardless of find panels being open, and make it trigger command listeners.
+<a name="toggle_case_sensitive_ext"></a>[**`toggle_case_sensitive_ext`**][toggle_case_sensitive_ext] | | Run `toggle_case_sensitive` regardless of find panels being open, and make it trigger command listeners.
+<a name="toggle_whole_word_ext"></a>[**`toggle_whole_word_ext`**][toggle_whole_word_ext] | | Run `toggle_whole_word` regardless of find panels being open, and make it trigger command listeners.
 
 
 ### Modifications
@@ -66,3 +69,6 @@ Command | Args | Description
 [slurp_replace_string_ext]: ./plugin_slurp_find_string_ext.py "View source"
 [extend_show_panel]: ./plugin_extend_show_panel.py "View source"
 [extend_single_selection]: ./plugin_extend_single_selection.py "View source"
+[toggle_regex_ext]: ./plugin_extend_toggle_find_setting.py "View source"
+[toggle_case_sensitive_ext]: ./plugin_extend_toggle_find_setting.py "View source"
+[toggle_whole_word_ext]: ./plugin_extend_toggle_find_setting.py "View source"
