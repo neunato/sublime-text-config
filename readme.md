@@ -23,7 +23,6 @@ Command | Args | Description
 <a name="toggle_case"></a>[**`toggle_case`**][toggle_case] | | Swap case of characters in selection based on first non-whitespace character. Work on word if selection is empty.
 <a name="next_view_in_group"></a>[**`next_view_in_group`**][next_view_in_group] | | Select the next neighbouring file within group.
 <a name="prev_view_in_group"></a>[**`prev_view_in_group`**][prev_view_in_group] | | Select the previous neighbouring file within group.
-<a name="set_layout_ext"></a>[**`set_layout_ext`**][set_layout_ext] | `rows` : `[int]` <br> `cols` : `[int]` <br> `cells` : `[[int]]` | Run `set_layout` and move the selected tab and all to the right to the newly created group, if any.
 <a name="close_others_by_index_ext"></a>[**`close_others_by_index_ext`**][close_others_by_index_ext] | `group` : `int` <br> `index` : `int` | Run `close_others_by_index` with the active view if called without parameters. Needed for binding to a key.
 <a name="close_to_right_by_index_ext"></a>[**`close_to_right_by_index_ext`**][close_to_right_by_index_ext] | `group` : `int` <br> `index` : `int` | Run `close_to_right_by_index` with the active view if called without parameters. Needed for binding to a key.
 <a name="unselect_lines"></a>[**`unselect_lines`**][unselect_lines] | `forward` : `bool` | Remove first or last selection based on `forward`.
@@ -45,6 +44,7 @@ Command | Args | Description
 <a name="extend_single_selection"></a>[**`single_selection`**][extend_single_selection] | `reverse` : `bool` | Add `reverse` parameter to control whether first or last selection will remain.
 <a name="join_lines"></a>[**`join_lines`**][join_lines] |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Remove extra whitespace from single-line selections.
 <a name="split_selection_into_lines"></a>[**`split_selection_into_lines`**][split_selection_into_lines] | | Split single-line selections into characters.
+<a name="set_layout"></a>[**`set_layout`**][set_layout] | `rows` : `[int]` <br> `cols` : `[int]` <br> `cells` : `[[int]]` | Move active and all tabs to the right to the newly created group, if any.
 
 
 [convert_indentation]: ./plugin_convert_indentation.py "View source"
@@ -56,7 +56,6 @@ Command | Args | Description
 [toggle_case]: ./plugin_toggle_case.py "View source"
 [next_view_in_group]: ./plugin_switch_view_in_group.py "View source"
 [prev_view_in_group]: ./plugin_switch_view_in_group.py "View source"
-[set_layout_ext]: ./plugin_set_layout_ext.py "View source"
 [close_others_by_index_ext]: ./plugin_close_other_tabs_ext.py "View source"
 [close_to_right_by_index_ext]: ./plugin_close_other_tabs_ext.py "View source"
 [unselect_lines]: ./plugin_unselect_lines.py "View source"
@@ -72,3 +71,4 @@ Command | Args | Description
 [toggle_whole_word_ext]: ./plugin_extend_toggle_find_setting.py "View source"
 [join_lines]: ./plugin_extend_join_lines.py "View source"
 [split_selection_into_lines]: ./plugin_extend_split_selection_into_lines.py "View source"
+[set_layout]: ./plugin_extend_set_layout.py "View source"
