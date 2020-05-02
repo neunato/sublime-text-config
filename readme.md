@@ -21,7 +21,6 @@ Command | Args | Description
 <a name="toggle_fold_by_level"></a>[**`toggle_fold_by_level`**][toggle_fold_by_level] | `level` : `int` | Fold/unfold regions of given indentation level. If folded regions exist they are unfolded, else code is folded.
 <a name="unfold_by_level"></a>[**`unfold_by_level`**][unfold_by_level] | `level` : `int` | Unfold regions of given indentation level.
 <a name="toggle_case"></a>[**`toggle_case`**][toggle_case] | | Swap case of characters in selection based on first non-whitespace character. Work on word if selection is empty.
-<a name="join_lines_ext"></a>[**`join_lines_ext`**][join_lines_ext] | | Run `join_lines` on multiline selection, else remove whitespace from selection.
 <a name="split_selection_into_lines_ext"></a>[**`split_selection_into_lines_ext`**][split_selection_into_lines_ext] | | Run `split_selection_into_lines` on multiline selection, else split into characters.
 <a name="next_view_in_group"></a>[**`next_view_in_group`**][next_view_in_group] | | Select the next neighbouring file within group.
 <a name="prev_view_in_group"></a>[**`prev_view_in_group`**][prev_view_in_group] | | Select the previous neighbouring file within group.
@@ -45,6 +44,7 @@ Command | Args | Description
 ------- | ---- | -----------
 <a name="extend_show_panel"></a>[**`show_panel`**][extend_show_panel] | `panel` : `str` <br> `reverse` : `bool` <br> `toggle` : `bool` | Close active panel regardless of focus when `toggle` is on.
 <a name="extend_single_selection"></a>[**`single_selection`**][extend_single_selection] | `reverse` : `bool` | Add `reverse` parameter to control whether first or last selection will remain.
+<a name="join_lines"></a>[**`join_lines`**][join_lines] | | Remove extra whitespace from single-line selections.
 
 
 [convert_indentation]: ./plugin_convert_indentation.py "View source"
@@ -54,7 +54,6 @@ Command | Args | Description
 [toggle_fold_by_level]: ./plugin_toggle_fold_by_level.py "View source"
 [unfold_by_level]: ./plugin_toggle_fold_by_level.py "View source"
 [toggle_case]: ./plugin_toggle_case.py "View source"
-[join_lines_ext]: ./plugin_join_lines_ext.py "View source"
 [split_selection_into_lines_ext]: ./plugin_split_selection_into_lines_ext.py "View source"
 [next_view_in_group]: ./plugin_switch_view_in_group.py "View source"
 [prev_view_in_group]: ./plugin_switch_view_in_group.py "View source"
@@ -72,3 +71,4 @@ Command | Args | Description
 [toggle_regex_ext]: ./plugin_extend_toggle_find_setting.py "View source"
 [toggle_case_sensitive_ext]: ./plugin_extend_toggle_find_setting.py "View source"
 [toggle_whole_word_ext]: ./plugin_extend_toggle_find_setting.py "View source"
+[join_lines]: ./plugin_extend_join_lines.py "View source"
