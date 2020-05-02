@@ -1,12 +1,17 @@
 from sublime import Region
-from sublime_plugin import TextCommand
+from sublime_plugin import TextCommand, EventListener
 
 
-class SplitSelectionIntoLinesExtCommand(TextCommand):
+class SplitSelectionIntoLines(EventListener):
    """
-   Run split_selection_into_lines on multiline selection, else split into
-   characters.
+   Split single-line selections into characters.
    """
+   def on_text_command(self, view, command, args):
+      if command == "split_selection_into_lines":
+         return "private_split_selection_into_lines"
+
+
+class PrivateSplitSelectionIntoLines(TextCommand):
    def run(self, edit):
       view = self.view
       selection = view.sel()

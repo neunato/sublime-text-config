@@ -21,7 +21,6 @@ Command | Args | Description
 <a name="toggle_fold_by_level"></a>[**`toggle_fold_by_level`**][toggle_fold_by_level] | `level` : `int` | Fold/unfold regions of given indentation level. If folded regions exist they are unfolded, else code is folded.
 <a name="unfold_by_level"></a>[**`unfold_by_level`**][unfold_by_level] | `level` : `int` | Unfold regions of given indentation level.
 <a name="toggle_case"></a>[**`toggle_case`**][toggle_case] | | Swap case of characters in selection based on first non-whitespace character. Work on word if selection is empty.
-<a name="split_selection_into_lines_ext"></a>[**`split_selection_into_lines_ext`**][split_selection_into_lines_ext] | | Run `split_selection_into_lines` on multiline selection, else split into characters.
 <a name="next_view_in_group"></a>[**`next_view_in_group`**][next_view_in_group] | | Select the next neighbouring file within group.
 <a name="prev_view_in_group"></a>[**`prev_view_in_group`**][prev_view_in_group] | | Select the previous neighbouring file within group.
 <a name="set_layout_ext"></a>[**`set_layout_ext`**][set_layout_ext] | `rows` : `[int]` <br> `cols` : `[int]` <br> `cells` : `[[int]]` | Run `set_layout` and move the selected tab and all to the right to the newly created group, if any.
@@ -29,10 +28,10 @@ Command | Args | Description
 <a name="close_to_right_by_index_ext"></a>[**`close_to_right_by_index_ext`**][close_to_right_by_index_ext] | `group` : `int` <br> `index` : `int` | Run `close_to_right_by_index` with the active view if called without parameters. Needed for binding to a key.
 <a name="unselect_lines"></a>[**`unselect_lines`**][unselect_lines] | `forward` : `bool` | Remove first or last selection based on `forward`.
 <a name="expand_selection_to_paragraph_sub"></a>[**`expand_selection_to_paragraph_sub`**][expand_selection_to_paragraph_sub] | | Subtract paragraph enclosing the mouse position from selection.
-<a name="set_find_string"></a>[**`set_find_string`**][set_find_string] | `string`: `str` | Set `string` as "find" input field of find panels.
-<a name="set_replace_string"></a>[**`set_replace_string`**][set_replace_string] | `string`: `str` | Set `string` as "replace" input field of find panels.
-<a name="slurp_find_string_ext"></a>[**`slurp_find_string_ext`**][slurp_find_string_ext] | `forward`: `bool` | Run `slurp_find_string` on first or last selection based on `forward`.
-<a name="slurp_find_string_ext"></a>[**`slurp_find_string_ext`**][slurp_replace_string_ext] | `forward`: `bool` | Run `slurp_replace_string` on first or last selection based on `forward`.
+<a name="set_find_string"></a>[**`set_find_string`**][set_find_string] | `string` : `str` | Set `string` as "find" input field of find panels.
+<a name="set_replace_string"></a>[**`set_replace_string`**][set_replace_string] | `string` : `str` | Set `string` as "replace" input field of find panels.
+<a name="slurp_find_string_ext"></a>[**`slurp_find_string_ext`**][slurp_find_string_ext] | `forward` : `bool` | Run `slurp_find_string` on first or last selection based on `forward`.
+<a name="slurp_find_string_ext"></a>[**`slurp_find_string_ext`**][slurp_replace_string_ext] | `forward` : `bool` | Run `slurp_replace_string` on first or last selection based on `forward`.
 <a name="toggle_regex_ext"></a>[**`toggle_regex_ext`**][toggle_regex_ext] | | Run `toggle_regex` regardless of find panels being open, and make it trigger command listeners.
 <a name="toggle_case_sensitive_ext"></a>[**`toggle_case_sensitive_ext`**][toggle_case_sensitive_ext] | | Run `toggle_case_sensitive` regardless of find panels being open, and make it trigger command listeners.
 <a name="toggle_whole_word_ext"></a>[**`toggle_whole_word_ext`**][toggle_whole_word_ext] | | Run `toggle_whole_word` regardless of find panels being open, and make it trigger command listeners.
@@ -44,7 +43,8 @@ Command | Args | Description
 ------- | ---- | -----------
 <a name="extend_show_panel"></a>[**`show_panel`**][extend_show_panel] | `panel` : `str` <br> `reverse` : `bool` <br> `toggle` : `bool` | Close active panel regardless of focus when `toggle` is on.
 <a name="extend_single_selection"></a>[**`single_selection`**][extend_single_selection] | `reverse` : `bool` | Add `reverse` parameter to control whether first or last selection will remain.
-<a name="join_lines"></a>[**`join_lines`**][join_lines] | | Remove extra whitespace from single-line selections.
+<a name="join_lines"></a>[**`join_lines`**][join_lines] |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Remove extra whitespace from single-line selections.
+<a name="split_selection_into_lines"></a>[**`split_selection_into_lines`**][split_selection_into_lines] | | Split single-line selections into characters.
 
 
 [convert_indentation]: ./plugin_convert_indentation.py "View source"
@@ -54,7 +54,6 @@ Command | Args | Description
 [toggle_fold_by_level]: ./plugin_toggle_fold_by_level.py "View source"
 [unfold_by_level]: ./plugin_toggle_fold_by_level.py "View source"
 [toggle_case]: ./plugin_toggle_case.py "View source"
-[split_selection_into_lines_ext]: ./plugin_split_selection_into_lines_ext.py "View source"
 [next_view_in_group]: ./plugin_switch_view_in_group.py "View source"
 [prev_view_in_group]: ./plugin_switch_view_in_group.py "View source"
 [set_layout_ext]: ./plugin_set_layout_ext.py "View source"
@@ -72,3 +71,4 @@ Command | Args | Description
 [toggle_case_sensitive_ext]: ./plugin_extend_toggle_find_setting.py "View source"
 [toggle_whole_word_ext]: ./plugin_extend_toggle_find_setting.py "View source"
 [join_lines]: ./plugin_extend_join_lines.py "View source"
+[split_selection_into_lines]: ./plugin_extend_split_selection_into_lines.py "View source"
