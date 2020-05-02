@@ -36,6 +36,13 @@ Command | Args | Description
 <a name="slurp_find_string_ext"></a>[**`slurp_find_string_ext`**][slurp_replace_string_ext] | `forward`: `bool` | Run `slurp_replace_string` on first or last selection based on `forward`.
 
 
+### Modifications
+
+Command | Args | Description
+------- | ---- | -----------
+<a name="extend_show_panel"></a>[**`show_panel`**][extend_show_panel] | `panel` : `str` <br> `reverse` : `bool` <br> `toggle` : `bool` | Close active panel regardless of focus when `toggle` is on.
+
+
 [convert_indentation]: ./plugin_convert_indentation.py "View source"
 [_auto_convert_indentation]: ./plugin_convert_indentation.py "View source"
 [trim_file]: ./plugin_trim_file.py "View source"
@@ -56,3 +63,4 @@ Command | Args | Description
 [set_replace_string]: ./plugin_set_find_string.py "View source"
 [slurp_find_string_ext]: ./plugin_slurp_find_string_ext.py "View source"
 [slurp_replace_string_ext]: ./plugin_slurp_find_string_ext.py "View source"
+[extend_show_panel]: ./plugin_extend_show_panel.py "View source"
