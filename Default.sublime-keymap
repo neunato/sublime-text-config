@@ -312,8 +312,9 @@
    { "keys": ["ctrl+shift+tab"], "command": "prev_view_in_group" },
    { "keys": ["ctrl+a"], "command": "select_all" },
    { "keys": ["alt+s"], "command": "split_selection_into_lines_ext" },
-   { "keys": ["escape"], "command": "single_selection", "context": [{ "key": "num_selections", "operator": "not_equal", "operand": 1 }] },
    { "keys": ["escape"], "command": "move", "args": {"by": "characters", "forward": false}, "context": [{ "key": "selection_empty", "operator": "equal", "operand": false, "match_all": true }] },
+   { "keys": ["escape"], "command": "single_selection", "context": [{ "key": "num_selections", "operator": "not_equal", "operand": 1 }] },
+   { "keys": ["shift+escape"], "command": "single_selection", "args": {"reverse": true}, "context": [{ "key": "num_selections", "operator": "not_equal", "operand": 1 }] },
    { "keys": ["escape"], "command": "clear_fields", "context": [{ "key": "has_next_field" }] },
    { "keys": ["escape"], "command": "clear_fields", "context": [{ "key": "has_prev_field" }] },
    { "keys": ["escape"], "command": "hide_panel", "args": {"cancel": true}, "context": [{ "key": "panel_visible" }, { "key": "panel_has_focus", "operator": "equal", "operand": false }, { "key": "selection_empty", "match_all": true }] },
@@ -690,7 +691,7 @@
 
    // TERMINUS
 
-   { "keys": ["shift+escape"], "command": "_" },
+   { "keys": ["shift+escape"], "command": "_", "context": [{"key": "terminus_view"}] },
 
    // Basic keys
    { "keys": ["up"], "command": "terminus_keypress", "args": {"key": "up"}, "context": [{"key": "terminus_view"}] },

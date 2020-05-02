@@ -41,6 +41,7 @@ Command | Args | Description
 Command | Args | Description
 ------- | ---- | -----------
 <a name="extend_show_panel"></a>[**`show_panel`**][extend_show_panel] | `panel` : `str` <br> `reverse` : `bool` <br> `toggle` : `bool` | Close active panel regardless of focus when `toggle` is on.
+<a name="extend_single_selection"></a>[**`single_selection`**][extend_single_selection] | `reverse` : `bool` | Add `reverse` parameter to control whether first or last selection will remain.
 
 
 [convert_indentation]: ./plugin_convert_indentation.py "View source"
@@ -64,3 +65,4 @@ Command | Args | Description
 [slurp_find_string_ext]: ./plugin_slurp_find_string_ext.py "View source"
 [slurp_replace_string_ext]: ./plugin_slurp_find_string_ext.py "View source"
 [extend_show_panel]: ./plugin_extend_show_panel.py "View source"
+[extend_single_selection]: ./plugin_extend_single_selection.py "View source"
