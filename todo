@@ -1,16 +1,26 @@
+
 FINDS
 [+] replace_prev
 [+] find_under_expand_prev
 [+] make find_under[_expand] always respect case and whole word settings of find panel
 [+] toggling of find options must work outside panel (regardless of focus, selection, and openness)
  (since only those are highlighted)!
-[ ] highlight matches as if find panel always open (not matching only whole word stuff)
+[+] close find panel on focus lost
+[ ] find_under_expand must not care about in_selection (as panel can be hidden) it will simply slurp the multiline selection
+[ ] highlight find in selection selection (a simple border will do, this will work great with panel autohiding on lost focus)
+[ ] keep find panel open on find in files search
+[ ] highlight matches as if find panel always open (not matching only whole word stuff); this probably won't be workaroundable by using the builtin highlights while panel is open (as it must work regardless of it), so tracking the current state of find panel settings will be a must (first opening nukes settings to false, from there we can track toggles and shit) + show settings in status bar? considering we have access...
+[+] ctrl+r open find panel if not already
+[ ] clear find input if selection empty (after expanding) + BROKEN atm as selection gets lost and finding not possible
+[ ] add project root to find in files by default
+[ ] better find in files exclusion folder settings
+[ ] switching between two different find panels must preserve input texts
 
 =====================================
-always open terminus in project root (only if no project at current file, or maybe if file not part of project)
-ctrl+shift+t <> reopen last tab
-ctrl+w <> close tab
-ctrl+shift+w <> close tabs to the right
+[keybind] ctrl+shift+t <> reopen last tab
+[keybind] ctrl+w <> close tab
+[keybind] ctrl+shift+w <> close tabs to the right
+[terminus/setting] always open terminus in project root (only if no project at current file, or maybe if file not part of project)
 ---
 [style] font_size++ in sidebar
 [style] font_size++ in command palette (hmm, in a nested one, like view package file's list, is that package specific or general?)
@@ -22,15 +32,15 @@ ctrl+shift+w <> close tabs to the right
 [keybind] terminus reset + clear
 [keybind] ??? change syntax
 [keybind] ??? move file to group
-[keybind] ??? open replace panel with either [ctrl+f] or [ctrl+r]
 [keybind] ??? fold tag (xml) attributes
-[terminus][keybind/plugin] ctrl+shift+w that is reopening last closed tab must work on terminus
-[terminus][keybind/plugin] mouse selection
-[terminus][keybind/plugin] ctrl+shift+left/right caught by sublime, we want a terminal selection 
-[terminus][setting/plugin] creating a new tab when not in project must inherit current cwd from the current terminal (as file's path works)
-[terminus][style] padding since no line numbers (maybe add some generally, to any tab)
-[terminus][style] disable "word wrap" -> set a min col width?
-[terminus][style] tab colour should reflect bg colour... or some other kind of indicator
+---
+[terminus/keybind/plugin] ctrl+shift+w that is reopening last closed tab must work on terminus
+[terminus/keybind/plugin] mouse selection
+[terminus/keybind/plugin] ctrl+shift+left/right caught by sublime, we want a terminal selection 
+[terminus/setting/plugin] creating a new tab when not in project must inherit current cwd from the current terminal (as file's path works)
+[terminus/style] padding since no line numbers (maybe add some generally, to any tab)
+[terminus/style] disable "word wrap" -> set a min col width?
+[terminus/style] tab colour should reflect bg colour... or some other kind of indicator
 
 
 MENUS
