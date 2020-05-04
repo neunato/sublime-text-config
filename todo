@@ -47,6 +47,15 @@ FINDS
 [terminus/style] tab colour should reflect bg colour... or some other kind of indicator
 
 
+PLUGINS
+[ ] indent pasted text if _auto_convert_indentation on
+[ ] indicator when swapping groups (like cursor line blink)
+[ ] keep undo history after closing
+[ ] start new windows in fullscreen (or same size as main window)
+[ ] improve curly brackets auto pairing (simply wrap text that follows until a newline or same level indentation?), careful not to fuck (js) objects up
+[ ] i know there is something bothering me about quote auto-pairing, when mixing ' and "
+
+
 MENUS
 - Main (mnemonics, try hiding it with no alt+ conflicts)
 - Side Bar Mount Point
@@ -55,13 +64,6 @@ MENUS
 - Context (sort lines?, unique lines?, reverse lines?, shuffle lines?)
 - Find in Files
 - Widget Context (...Technically this file name can be changed via the "context_menu" setting inside of Widget.sublime-settings. - CHECK IF THIS IS TRUE FOR ALL OF THEM (hmm, all contexts at least), THAT IS, WHY DOES Default.sublime-preferences' context_menu REFER TO Context.sublime-menu...)
-
-
-PLUGINS
-[ ] keep undo history after closing
-[ ] start new windows in fullscreen (or same size as main window)
-[ ] improve curly brackets auto pairing (simply wrap text that follows until a newline or same level indentation?), careful not to fuck (js) objects up
-[ ] i know there is something bothering me about quote auto-pairing, when mixing ' and "
 
 
 PACKAGES
