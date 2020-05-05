@@ -46,6 +46,7 @@ FINDS
 
 
 PLUGINS
+[ ] all EventListeners that are on based on a setting must be ViewEventListeners
 [ ] indent pasted text if _auto_convert_indentation on
 [ ] indicator when swapping groups (like cursor line blink)
 [ ] keep undo history after closing
