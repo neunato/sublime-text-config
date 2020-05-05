@@ -7,17 +7,15 @@ FINDS
  (since only those are highlighted)!
 [+] close find panel on focus lost
 [+] ctrl+r open find panel if not already
-[ ] open_panel and close_panel
+[+] open_panel and close_panel
 [+] find_selected_text vs under => i think find_under_expand works that way regardless of setting => so the point of under is for that to work regardless of setting (but then, if setting is on, we dont have to slurp when finding?)
 [+] move selection modifications to a TextCommand (hmm, move the entire FindCommand? why have two, we can access self.view.window().active_view() anyway)
 [ ] find_under_expand must not care about in_selection (as panel can be hidden) it will simply slurp the multiline selection
 [ ] highlight find in selection selection (a simple border will do, this will work great with panel autohiding on lost focus)
 [ ] keep find panel open on find in files search
 [ ] highlight matches as if find panel always open (not matching only whole word stuff); this probably won't be workaroundable by using the builtin highlights while panel is open (as it must work regardless of it), so tracking the current state of find panel settings will be a must (first opening nukes settings to false, from there we can track toggles and shit) + show settings in status bar? considering we have access...
-[ ] clear find input if selection empty (after expanding) + BROKEN atm as selection gets lost and finding not possible
 [ ] add project root to find in files by default
 [ ] better find in files exclusion folder settings
-[ ] switching between two different find panels must preserve input texts
 
 
 =====================================
