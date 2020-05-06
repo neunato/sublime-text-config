@@ -16,7 +16,7 @@ FINDS
 [ ] highlight matches as if find panel always open (not matching only whole word stuff); this probably won't be workaroundable by using the builtin highlights while panel is open (as it must work regardless of it), so tracking the current state of find panel settings will be a must (first opening nukes settings to false, from there we can track toggles and shit) + show settings in status bar? considering we have access...
 [ ] add project root to find in files by default
 [ ] better find in files exclusion folder settings
-
+[ ] rebind replace all (ctrl t is creates new tab)
 
 =====================================
 [keybind] ctrl+shift+t <> reopen last tab
