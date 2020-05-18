@@ -4,9 +4,6 @@
 [?] highlight matches as if find panel always open (not matching only whole word stuff)
 [?] keep find panel open on find in files search?
 =====================================
-[keybind] ctrl+shift+t <> reopen last tab
-[keybind] ctrl+w <> close tab
-[keybind] ctrl+shift+w <> close tabs to the right
 [terminus/setting] always open terminus in project root (only if no project at current file, or maybe if file not part of project)
 ---
 [style] font_size++ in sidebar
@@ -14,14 +11,13 @@
 [keybind] ctrl+space fucked up in python syntax
 [keybind] remove keybindings of added packages!
 [keybind] f10 show scope name
-[keybind] toggle_case
 [keybind] rebind [] () {}
 [keybind] terminus reset + clear
 [keybind] ??? change syntax
 [keybind] ??? move file to group
 [keybind] ??? fold tag (xml) attributes
 ---
-[terminus/keybind/plugin] ctrl+shift+w that is reopening last closed tab must work on terminus
+[terminus/keybind/plugin] reopening last closed tab must work on terminus (not necessarily preserve its state; at least shoot up a new one)
 [terminus/keybind/plugin] mouse selection
 [terminus/keybind/plugin] ctrl+shift+left/right caught by sublime, we want a terminal selection 
 [terminus/setting/plugin] creating a new tab when not in project must inherit current cwd from the current terminal (as file's path works)
