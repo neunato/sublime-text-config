@@ -12,6 +12,7 @@ Setting | Description
 ------- | -----------
 <a name="_auto_convert_indentation"></a>[**`_auto_convert_indentation`**][_auto_convert_indentation] | Reflect user's indentation settings in open files automatically. See [`convert_indentation`](#convert_indentation)
 <a name="_trim_file_on_save"></a>[**`_trim_file_on_save`**][_trim_file_on_save] | Remove leading and trailing whitespace from a file when saving it. See [`trim_file`](#trim_file)
+<a name="_auto_close_find_panel"></a>[**`_auto_close_find_panel`**][_auto_close_find_panel] | Close find panel once it loses focus.
 
 Command | Args | Description
 ------- | ---- | -----------
@@ -71,3 +72,4 @@ Command | Args | Description
 [close_to_right_by_index]: ./plugin_extend_close_others_by_index.py "View source"
 [find]: ./plugin_find.py "View source"
 [replace]: ./plugin_find.py "View source"
+[_auto_close_find_panel]: ./plugin_auto_close_find_panel.py "View source"
