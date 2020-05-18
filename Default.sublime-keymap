@@ -335,14 +335,8 @@
    { "keys": ["shift+tab"], "command": "unindent", "context": [{ "key": "preceding_text", "operator": "regex_match", "operand": "^[\t ]*" } ] },
    { "keys": ["shift+tab"], "command": "unindent", "context": [{ "key": "text", "operator": "regex_contains", "operand": "\n" } ] },
    { "keys": ["shift+tab"], "command": "prev_field", "context": [{ "key": "has_prev_field" } ] },
-   { "keys": ["alt+f"], "command": "find_under_expand" },
-   { "keys": ["alt+d"], "command": "find_under_expand_skip" },
    { "keys": ["ctrl+space"], "command": "expand_selection", "args": {"to": "brackets"} },
    { "keys": ["enter"], "command": "commit_completion", "context": [{ "key": "auto_complete_visible" }, { "key": "setting.auto_complete_commit_on_tab", "operand": false }] },
-   { "keys": ["ctrl+f"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
-   { "keys": ["ctrl+h"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
-   { "keys": ["alt+g"], "command": "find_all_under" },
-   { "keys": ["ctrl+h"], "command": "show_panel", "args": {"panel": "find_in_files"} },
    { "keys": ["ctrl+up"], "command": "swap_line_up" },
    { "keys": ["ctrl+shift+up"], "command": "swap_line_up" },
    { "keys": ["ctrl+down"], "command": "swap_line_down" },
@@ -663,22 +657,6 @@
    { "keys": ["f7"], "command": "toggle_minimap" },
    { "keys": ["f8"], "command": "toggle_side_bar" },
 
-   // Replace panel key bindings
-   { "keys": ["enter"], "command": "find_next", "context": [{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}] },
-   { "keys": ["shift+enter"], "command": "find_prev", "context": [{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}] },
-   { "keys": ["ctrl+f"], "command": "find_next", "context": [{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}] },
-   { "keys": ["ctrl+shift+f"], "command": "find_prev", "context": [{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}] },
-   { "keys": ["ctrl+g"], "command": "find_all", "args": {"close_panel": true}, "context": [{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}] },
-   { "keys": ["ctrl+r"], "command": "replace_next", "context": [{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}] },
-   { "keys": ["ctrl+t"], "command": "replace_all", "args": {"close_panel": true}, "context": [{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}] },
-
-   // Find in Files panel key bindings
-   // { "keys": ["enter"], "command": "find_all", "context": [{"key": "panel", "operand": "find_in_files"}, {"key": "panel_has_focus"}] },   // works without binding
-   { "keys": ["ctrl+f"], "command": "find_all", "context": [{"key": "panel", "operand": "find_in_files"}, {"key": "panel_has_focus"}] },
-   { "keys": ["ctrl+g"], "command": "find_all", "context": [{"key": "panel", "operand": "find_in_files"}, {"key": "panel_has_focus"}] },
-   { "keys": ["ctrl+r"], "command": "replace_all", "context": [{"key": "panel", "operand": "find_in_files"}, {"key": "panel_has_focus"}] },
-   { "keys": ["ctrl+t"], "command": "replace_all", "context": [{"key": "panel", "operand": "find_in_files"}, {"key": "panel_has_focus"}] },
-
    // HTML, XML close tag
    { "keys": ["/"], "command": "close_tag", "args": { "insert_slash": true }, "context":
       [
@@ -688,9 +666,29 @@
       ]
    },
 
+   // Find and replace panel
+   { "keys": ["ctrl+f"],       "command": "find", "args": {"expand": true, "forward": true, "open_panel": true, "panel": "replace"} },
+   { "keys": ["ctrl+shift+f"], "command": "find", "args": {"expand": true, "forward": false, "open_panel": true, "panel": "replace"} },
+   { "keys": ["ctrl+g"],       "command": "find", "args": {"expand": true, "all": true, "close_panel": true} },
+   { "keys": ["enter"],        "command": "find", "args": {"forward": true}, "context": [{"key": "panel", "operand": "replace"}]},
+   { "keys": ["ctrl+r"],       "command": "replace", "args": {"expand": true, "forward": true, "open_panel": true, "panel": "replace"} },
+   { "keys": ["ctrl+shift+r"], "command": "replace", "args": {"expand": true, "forward": false, "open_panel": true, "panel": "replace"} },
+   { "keys": ["ctrl+t"],       "command": "replace", "args": {"expand": true, "all": true, "close_panel": true}, "context": [{"key": "panel", "operand": "replace"}] },
+
+   { "keys": ["alt+f"],        "command": "find", "args": {"expand": true, "under": true, "additive": true, "forward": true, "close_panel": true} },
+   { "keys": ["alt+shift+f"],  "command": "find", "args": {"expand": true, "under": true, "additive": true, "forward": false, "close_panel": true} },
+   { "keys": ["alt+d"],        "command": "find", "args": {"expand": true, "under": true, "additive": true, "forward": true, "skip": true, "close_panel": true} },
+   { "keys": ["alt+shift+d"],  "command": "find", "args": {"expand": true, "under": true, "additive": true, "forward": false, "skip": true, "close_panel": true} },
+   { "keys": ["alt+g"],        "command": "find", "args": {"expand": true, "under": true, "additive": true, "all": true, "close_panel": true} },
+
+   { "keys": ["ctrl+f"],       "command": "find", "args": {"all": true}, "context": [{"key": "panel", "operand": "find_in_files"}] },
+   { "keys": ["ctrl+g"],       "command": "find", "args": {"all": true}, "context": [{"key": "panel", "operand": "find_in_files"}] },
+   { "keys": ["ctrl+r"],       "command": "replace", "args": {"all": true}, "context": [{"key": "panel", "operand": "find_in_files"}] },
+   { "keys": ["ctrl+t"],       "command": "replace", "args": {"all": true}, "context": [{"key": "panel", "operand": "find_in_files"}] },
+   { "keys": ["ctrl+h"],       "command": "show_panel", "args": {"panel": "find_in_files"}, "context": [{"key": "panel", "operator": "not_equal", "operand": "find_in_files"}] },
+
 
    // TERMINUS
-
    { "keys": ["shift+escape"], "command": "_", "context": [{"key": "terminus_view"}] },
 
    // Basic keys
@@ -922,5 +920,5 @@
    { "keys": ["shift+home"], "command": "terminus_keypress", "args": {"key": "home", "shift": true}, "context": [{"key": "terminus_view"}] },
    { "keys": ["shift+end"], "command": "terminus_keypress", "args": {"key": "end", "shift": true}, "context": [{"key": "terminus_view"}] },
    { "keys": ["shift+tab"], "command": "terminus_keypress", "args": {"key": "tab", "shift": true}, "context": [{"key": "terminus_view"}] },
-   { "keys": ["shift+backspace"], "command": "terminus_keypress", "args": {"key": "backspace", "shift": true}, "context": [{"key": "terminus_view"}] }
+   { "keys": ["shift+backspace"], "command": "terminus_keypress", "args": {"key": "backspace", "shift": true}, "context": [{"key": "terminus_view"}] },
 ]

@@ -13,10 +13,9 @@ Setting | Description
 <a name="_auto_convert_indentation"></a>[**`_auto_convert_indentation`**][_auto_convert_indentation] | Reflect user's indentation settings in open files automatically. See [`convert_indentation`](#convert_indentation)
 <a name="_trim_file_on_save"></a>[**`_trim_file_on_save`**][_trim_file_on_save] | Remove leading and trailing whitespace from a file when saving it. See [`trim_file`](#trim_file)
 
-
 Command | Args | Description
 ------- | ---- | -----------
-<a name="convert_indentation"></a>[**`convert_indentation`**][convert_indentation] |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Convert indentation to reflect the user's settings. See [`_auto_convert_indentation`](#_auto_convert_indentation)
+<a name="convert_indentation"></a>[**`convert_indentation`**][convert_indentation] |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Convert indentation to reflect the user's settings. See [`_auto_convert_indentation`](#_auto_convert_indentation)
 <a name="trim_file"></a>[**`trim_file`**][trim_file] | | Remove leading and trailing whitespace from a file. See [`_trim_file_on_save`](#_trim_file_on_save)
 <a name="toggle_fold_by_level"></a>[**`toggle_fold_by_level`**][toggle_fold_by_level] | `level` : `int` | Fold/unfold regions of given indentation level. If folded regions exist they are unfolded, else code is folded.
 <a name="unfold_by_level"></a>[**`unfold_by_level`**][unfold_by_level] | `level` : `int` | Unfold regions of given indentation level.
@@ -30,6 +29,8 @@ Command | Args | Description
 <a name="toggle_regex_ext"></a>[**`toggle_regex_ext`**][toggle_regex_ext] | | Run `toggle_regex` regardless of find panels being open, and make it trigger command listeners.
 <a name="toggle_case_sensitive_ext"></a>[**`toggle_case_sensitive_ext`**][toggle_case_sensitive_ext] | | Run `toggle_case_sensitive` regardless of find panels being open, and make it trigger command listeners.
 <a name="toggle_whole_word_ext"></a>[**`toggle_whole_word_ext`**][toggle_whole_word_ext] | | Run `toggle_whole_word` regardless of find panels being open, and make it trigger command listeners.
+<a name="find"></a>[**`find`**][find] | `forward` : `bool` <br> `expand` : `bool` <br> `under` : `bool` <br> `additive` : `bool` <br> `skip` : `bool` <br> `all` : `bool` <br> `open_panel` : `bool` <br> `panel` : `string` <br> `close_panel` : `bool` | Wrapper around `find_next`, `find_prev` and `find_all` commands that makes them always respect whole word and case sensitive settings, regardless of initial selection or panel having focus or not. <br> <br> Also supports `find_under_expand_prev` and `find_under_expand_skip_prev` "missing" commands.
+<a name="replace"></a>[**`replace`**][replace] | `forward` : `bool` <br> `expand` : `bool` <br> `under` : `bool` <br> `all` : `bool` <br> `open_panel` : `bool` <br> `panel` : `string` <br> `close_panel` : `bool` | Wrapper around `replace_next` and `replace_all` commands that makes them always respect whole word and case sensitive settings, regardless of initial selection or panel having focus or not. <br> <br> Also supports `replace_prev` "missing" command.
 
 
 ### Modifications
@@ -68,3 +69,5 @@ Command | Args | Description
 [set_layout]: ./plugin_extend_set_layout.py "View source"
 [close_others_by_index]: ./plugin_extend_close_others_by_index.py "View source"
 [close_to_right_by_index]: ./plugin_extend_close_others_by_index.py "View source"
+[find]: ./plugin_find.py "View source"
+[replace]: ./plugin_find.py "View source"
