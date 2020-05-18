@@ -58,4 +58,5 @@
    "_trim_file_on_save": true,
    "_auto_convert_indentation": true,
    "_auto_close_find_panel": true,
+   "_highlight_find_selection": true,
 }
