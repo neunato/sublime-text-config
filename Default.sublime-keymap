@@ -352,7 +352,7 @@
    { "keys": ["¸"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
    { "keys": ["¨"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
    { "keys": ["ctrl+alt+`"], "command": "toggle_terminus_panel" },
-   { "keys": ["alt+`"], "command": "terminus_open", "args": {"title": "TERMINAL", "cwd": "${file_path:${folder}}"} },
+   { "keys": ["alt+`"], "command": "terminus_open", "args": {"title": "■", "cwd": "${folder:${file_path}}"} },
    { "keys": ["f12"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
 
    // Auto-pair quotes
