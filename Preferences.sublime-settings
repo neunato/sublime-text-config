@@ -10,6 +10,7 @@
    "word_wrap": false,
    "indent_subsequent_lines": true,
    "always_show_minimap_viewport": true,
+   "highlight_line": true,
    "caret_extra_top": 0,
    "caret_extra_bottom": 0,
    "scroll_past_end": false,
@@ -26,6 +27,7 @@
    // User interface settings
    "scroll_speed": 1.5,
    "tree_animation_enabled": false,
+   "animation_enabled": false,
    "show_tab_close_buttons": false,
    "bold_folder_labels": true,
    "overlay_scroll_bars": "disabled",

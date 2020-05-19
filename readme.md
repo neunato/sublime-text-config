@@ -1,9 +1,9 @@
 ### Installation
 
 1. Install [Package Control](https://packagecontrol.io/installation)
-2. Run `git clone https://github.com/independentgeorge/sublime-text-config {DATA DIRECTORY}/Packages/User`
+2. Run `git clone https://github.com/monkape/sublime-text-config {DATA DIRECTORY}/Packages/User`
 3. Open Sublime Text
-4. Run `git reset --hard`
+4. Run `git reset --hard` (in case Package Control fails to restore theme/scheme)
 
 
 ### Additions
