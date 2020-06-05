@@ -1,3 +1,4 @@
+import re
 from sublime_plugin import TextCommand
 
 
@@ -16,7 +17,10 @@ class ToggleCaseCommand(TextCommand):
          if reg.empty():
             continue
          sel = view.substr(reg)
-         char = sel.lstrip()[0]
+         char = re.search("[a-zA-Z]", sel)
+         if (not char):
+            continue
+         char = char.group(0)
          if char.isupper():
             view.replace(edit, reg, sel.lower())
          else:
