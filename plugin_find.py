@@ -38,7 +38,7 @@ def expand_empty_sels(view):
       if not sel.empty():
          continue
       sel = view.word(sel)
-      sel, = view.split_by_newlines(sel)
+      sel = view.split_by_newlines(sel)[0]
       if not sel.empty():
          sels.add(sel)
          expanded = True
