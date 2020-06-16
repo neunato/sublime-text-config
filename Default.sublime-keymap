@@ -686,7 +686,7 @@
    { "keys": ["ctrl+g"],       "command": "find", "args": {"all": true}, "context": [{"key": "panel", "operand": "find_in_files"}] },
    { "keys": ["ctrl+r"],       "command": "replace", "args": {"all": true}, "context": [{"key": "panel", "operand": "find_in_files"}] },
    { "keys": ["ctrl+t"],       "command": "replace", "args": {"all": true}, "context": [{"key": "panel", "operand": "find_in_files"}] },
-   { "keys": ["ctrl+h"],       "command": "show_panel", "args": {"panel": "find_in_files"}, "context": [{"key": "panel", "operator": "not_equal", "operand": "find_in_files"}] },
+   { "keys": ["ctrl+h"],       "command": "find", "args": {"expand": true, "open_panel": true, "panel": "find_in_files"}, "context": [{"key": "panel", "operator": "not_equal", "operand": "find_in_files"}] },
 
 
    // TERMINUS
