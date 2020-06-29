@@ -1,24 +1,27 @@
-from re import sub
-from sublime_plugin import TextCommand, EventListener
+from re import sub, match
+from sublime_plugin import TextCommand
 
 
-class JoinLines(EventListener):
+class JoinWhitespace(TextCommand):
    """
-   Remove extra whitespace from single-line selections.
+   Join multi-line selections into a single line; join consecutive whitespace
+   of single-line selections, or remove all whitespace if none are consecutive.
    """
-   def on_text_command(self, view, command, args):
-      if command == "join_lines":
-         return "private_join_lines"
-
-
-class PrivateJoinLines(TextCommand):
    def run(self, edit):
       view = self.view
-      for reg in view.sel():
-         if reg.empty():
+      for sel in view.sel():
+         if sel.empty():
             continue
-         sel = view.substr(reg)
-         if "\n" in sel:
-            view.replace(edit, reg, sub("\s*\n\s*", " ", sel))
+         s = view.substr(sel)
+
+         # remove newlines and surrounding whitespace
+         if "\n" in s:
+            r = sub("\s*\n\s*", " ", s)
+
+         # replace/remove whitespace from single line
          else:
-            view.replace(edit, reg, sub("\s+", " ", sel))
+            r = sub("\s+", " ", s)
+            if r == s:
+               r = sub("\s", "", s)
+
+         view.replace(edit, sel, r)
