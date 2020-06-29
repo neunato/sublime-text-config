@@ -19,3 +19,18 @@ class SplitSelectionIntoChars(TextCommand):
          regs = [Region(pos+i, pos+i+1) for i in range(size)]
          sels.subtract(reg)
          sels.add_all(regs)
+
+
+class SplitSelection(TextCommand):
+   """
+   Run split_selection_into_lines or split_selection_into_chars if nothing changed.
+   """
+   def run(self, edit):
+      view = self.view
+      sel = view.sel()
+
+      n = len(sel)
+      view.run_command("split_selection_into_lines")
+      m = len(sel)
+      if n == m:
+         view.run_command("split_selection_into_chars")
