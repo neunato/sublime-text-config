@@ -100,3 +100,30 @@ class ConvertIndentationListener(EventListener):
             view_settings.set("tab_size", tab_size)
             view_settings.set("translate_tabs_to_spaces", use_spaces)
             view.run_command("convert_indentation")
+
+
+   # convert indentation when pasting
+   def on_text_command(self, view, command, args):
+      if command not in ("paste", "paste_and_indent"):
+         return
+
+      settings = view.settings()
+      auto_indent = settings.get("_auto_convert_indentation")
+      if not auto_indent:
+         return
+
+      tab_size = settings.get("tab_size")
+      use_spaces = settings.get("translate_tabs_to_spaces")
+
+      window = view.window()
+      view = window.new_file()
+      settings = view.settings()
+
+      settings.set("tab_size", tab_size)
+      settings.set("translate_tabs_to_spaces", use_spaces)
+
+      view.run_command("paste")
+      view.run_command("convert_indentation")
+      view.run_command("select_all")
+      view.run_command("cut")
+      view.close()
