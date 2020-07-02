@@ -353,7 +353,8 @@
    { "keys": ["¸"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
    { "keys": ["¨"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
    { "keys": ["ctrl+alt+`"], "command": "toggle_terminus_panel" },
-   { "keys": ["alt+`"], "command": "terminus_open", "args": {"title": "■", "cwd": "${folder:${file_path}}"} },
+   { "keys": ["ctrl+`"], "command": "terminus_open", "args": {"title": "■", "cwd": "${folder:${file_path}}"} },
+   { "keys": ["alt+`"], "command": "toggle_terminus_view", "args": {"title": "■", "cwd": "${folder:${file_path}}"} },
    { "keys": ["f12"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
 
    // Auto-pair quotes
@@ -786,7 +787,7 @@
    { "keys": ["ctrl+y"], "command": "terminus_keypress", "args": {"key": "y", "ctrl": true}, "context": [{"key": "terminus_view"}] },
    { "keys": ["ctrl+z"], "command": "terminus_keypress", "args": {"key": "z", "ctrl": true}, "context": [{"key": "terminus_view"}] },
    { "keys": ["ctrl+@"], "command": "terminus_keypress", "args": {"key": "@", "ctrl": true}, "context": [{"key": "terminus_view"}] },
-   { "keys": ["ctrl+`"], "command": "terminus_keypress", "args": {"key": "`", "ctrl": true}, "context": [{"key": "terminus_view"}] },
+   // { "keys": ["ctrl+`"], "command": "terminus_keypress", "args": {"key": "`", "ctrl": true}, "context": [{"key": "terminus_view"}] },
    { "keys": ["ctrl+["], "command": "terminus_keypress", "args": {"key": "[", "ctrl": true}, "context": [{"key": "terminus_view"}] },
    { "keys": ["ctrl+{"], "command": "terminus_keypress", "args": {"key": "{", "ctrl": true}, "context": [{"key": "terminus_view"}] },
    { "keys": ["ctrl+\\"], "command": "terminus_keypress", "args": {"key": "\\", "ctrl": true}, "context": [{"key": "terminus_view"}] },
