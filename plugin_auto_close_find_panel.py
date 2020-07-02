@@ -11,7 +11,8 @@ class AutoClosePanel(ViewEventListener):
    def is_applicable(cls, settings):
       auto_close = settings.get("_auto_close_find_panel")
       is_widget = settings.get("is_widget")
-      return auto_close and not is_widget
+      is_terminus = settings.get("terminus_view")
+      return auto_close and (not is_widget or is_terminus)
 
    def on_activated(self):
       window = self.view.window()
