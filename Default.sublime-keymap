@@ -264,7 +264,7 @@
    { "keys": ["ctrl+s"], "command": "save" },
    { "keys": ["ctrl+shift+s"], "command": "prompt_save_as" },
    { "keys": ["ctrl+w"], "command": "close" },
-   { "keys": ["ctrl+shift+w"], "command": "close_to_right_by_index" },
+   { "keys": ["ctrl+shift+w"], "command": "close_others_by_index" },
    { "keys": ["ctrl+q"], "command": "toggle_case" },
    { "keys": ["backspace"], "command": "left_delete" },
    { "keys": ["shift+backspace"], "command": "left_delete" },
@@ -338,6 +338,7 @@
    { "keys": ["shift+tab"], "command": "unindent", "context": [{ "key": "text", "operator": "regex_contains", "operand": "\n" } ] },
    { "keys": ["shift+tab"], "command": "prev_field", "context": [{ "key": "has_prev_field" } ] },
    { "keys": ["ctrl+space"], "command": "expand_selection", "args": {"to": "brackets"} },
+   { "keys": ["ctrl+space"], "command": "expand_selection", "args": {"to": "indentation"}, "context": [{ "key": "selector", "operand": "source.python" }] },
    { "keys": ["enter"], "command": "commit_completion", "context": [{ "key": "auto_complete_visible" }, { "key": "setting.auto_complete_commit_on_tab", "operand": false }] },
    { "keys": ["ctrl+up"], "command": "swap_line_up" },
    { "keys": ["ctrl+shift+up"], "command": "swap_line_up" },
@@ -355,6 +356,7 @@
    { "keys": ["ctrl+alt+`"], "command": "toggle_terminus_panel" },
    { "keys": ["ctrl+`"], "command": "terminus_open", "args": {"title": "■", "cwd": "${folder:${file_path}}"} },
    { "keys": ["alt+`"], "command": "toggle_terminus_view", "args": {"title": "■", "cwd": "${folder:${file_path}}"} },
+   { "keys": ["f10"], "command": "show_scope_name" },
    { "keys": ["f12"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
 
    // Auto-pair quotes
@@ -635,6 +637,8 @@
    { "keys": ["ctrl+2"], "command": "focus_group", "args": { "group": 1 } },
    { "keys": ["ctrl+3"], "command": "focus_group", "args": { "group": 2 } },
    { "keys": ["ctrl+4"], "command": "focus_group", "args": { "group": 3 } },
+
+   { "keys": ["ctrl+f8"], "command": "focus_side_bar" },
 
    { "keys": ["alt+1"], "command": "select_by_index", "args": { "index": 0 } },
    { "keys": ["alt+2"], "command": "select_by_index", "args": { "index": 1 } },
