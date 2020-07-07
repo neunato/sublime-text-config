@@ -21,6 +21,11 @@ def is_terminus_view(view):
 
 class Listener(EventListener):
    def on_activated(self, view):
+      settings = view.settings()
+      is_widget = settings.get("is_widget")
+      if is_widget:
+         return
+
       if view in views:
          views.remove(view)
       views.append(view)
@@ -36,7 +41,6 @@ class ToggleTerminusView(WindowCommand):
    used terminus view or create a new one.
    """
    def run(self, **args):
-      print(views)
       window = self.window
       active = window.active_view()
 
