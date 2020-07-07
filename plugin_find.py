@@ -1,3 +1,4 @@
+import re
 from sublime_plugin import TextCommand
 
 """
@@ -39,9 +40,14 @@ def expand_empty_sels(view):
          continue
       sel = view.word(sel)
       sel = view.split_by_newlines(sel)[0]
-      if not sel.empty():
-         sels.add(sel)
-         expanded = True
+      if sel.empty():
+         continue
+      string = view.substr(sel)
+      match = re.search("[a-zA-Z0-9]", string)
+      if (not match):
+        continue
+      sels.add(sel)
+      expanded = True
    return expanded
 
 
@@ -51,9 +57,14 @@ def slurp_find_string(window, additive, forward):
    # in the panel. we can fix the issue by reopening the panel (and lose the
    # in_selection setting) or by toggling whole_word twice (only possible if
    # panel has focus)
-
    view = window.active_view()
    sels = view.sel()
+
+   last_index = -1 if forward else 0
+   last_sel = sels[last_index]
+   if last_sel.empty():
+      return
+
    if additive and not forward and len(sels) > 1:
       regs = list(sels)
       sels.clear()
@@ -192,6 +203,7 @@ def find_replace(window, replace_match=False, forward=True, expand=False, under=
       open_panel = False
 
    expanded = False
+   panel_just_opened = open_panel and not was_find_panel_open
 
    # expand empty selections
    if expand:
@@ -206,7 +218,7 @@ def find_replace(window, replace_match=False, forward=True, expand=False, under=
       window.run_command("show_panel", {"panel": panel, "reverse": False})
 
    # perform find or replace unless selections expanded or panel just shown
-   if not expanded and not (open_panel and not was_find_panel_open):
+   if not (expanded or panel_just_opened):
       if replace_match:
          replace(window, forward, all)
       else:
