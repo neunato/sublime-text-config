@@ -51,6 +51,10 @@ class WrapBlockExtListener(EventListener):
 
 
 class WrapBlockExt(TextCommand):
+   """
+   Wrap and reindent the block of code that follows with begin and end
+   characters, stopping at the first newline.
+   """
    def run(self, edit, begin, end):
       view = self.view
       settings = view.settings()

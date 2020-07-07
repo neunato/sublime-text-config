@@ -5,7 +5,8 @@ from sublime_plugin import TextCommand
 class JoinWhitespace(TextCommand):
    """
    Join multi-line selections into a single line; join consecutive whitespace
-   of single-line selections, or remove all whitespace if none are consecutive.
+   of single-line selections into a single space, or remove all whitespace if
+   none are consecutive.
    """
    def run(self, edit):
       view = self.view
