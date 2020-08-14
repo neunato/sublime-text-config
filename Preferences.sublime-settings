@@ -1,6 +1,7 @@
 {
    // Editor settings
    "color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
+   "font_face": "Fira Code",
    "font_size": 10,
    "line_numbers": false,
    "margin": 0,
