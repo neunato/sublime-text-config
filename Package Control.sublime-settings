@@ -10,9 +10,14 @@
 		"Package Control",
 		"PackageDev",
 		"PackageResourceViewer",
+		"Pigment",
 		"Sass",
 		"Terminus",
 		"TypeScript Syntax",
 		"Vue Syntax Highlight"
+	],
+	"repositories":
+	[
+		"https://github.com/monkape/Pigment.git"
 	]
 }
