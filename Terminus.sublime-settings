@@ -6,43 +6,45 @@
    },
 
    "shell_configs": [{
-        "name": "Bash",
-        "cmd": ["bash", "-i", "-l"],
-        "env": {},
-        "enable": true,
-        "platforms": ["linux", "osx"]
-    },{
-        "name": "PowerShell",
-        "cmd": "pwsh.exe",
-        "env": {},
-        "enable": true,
-        "platforms": ["windows"]
-    }],
+      "name": "Bash",
+      "cmd": ["bash", "-i", "-l"],
+      "env": {},
+      "enable": true,
+      "platforms": ["linux", "osx"]
+   },{
+      "name": "PowerShell",
+      "cmd": "pwsh.exe",
+      "env": {},
+      "enable": true,
+      "platforms": ["windows"]
+   }],
+
+   "min_columns": 120,
 
    "theme": "user",
 
    "user_theme_colors": {
-       "background": "#293037",
-       "foreground": "#d8dee9",
-       "caret": "#f9ae58",
-       "block_caret": "#f9ae58",
-       "selection": "#4e5a65",
-       // "selection_foreground": "",
-       "00": "#000000",  // black
-       "01": "#ec5f66",  // red
-       "02": "#99c794",  // green
-       "03": "#fac761",  // brown
-       "04": "#6699cc",  // blue
-       "05": "#c695c6",  // magenta
-       "06": "#5fb4b4",  // cyan
-       "07": "#ffffff",  // white
-       "08": "#a6acb9",  // light_black
-       "09": "#ec5f66",  // light_red
-       "10": "#99c794",  // light_green
-       "11": "#fac761",  // light_brown
-       "12": "#6699cc",  // light_blue
-       "13": "#c695c6",  // light_magenta
-       "14": "#5fb4b4",  // light_cyan
-       "15": "#ffffff"   // light_white
+      "background": "#343d46",
+      "foreground": "#d8dee9",
+      "caret": "#f9ae58",
+      "block_caret": "#f9ae58",
+      "selection": "#4e5a65",
+      // "selection_foreground": "",
+      "00": "#000000",  // black
+      "01": "#ec5f66",  // red
+      "02": "#99c794",  // green
+      "03": "#fac761",  // brown
+      "04": "#6699cc",  // blue
+      "05": "#c695c6",  // magenta
+      "06": "#5fb4b4",  // cyan
+      "07": "#ffffff",  // white
+      "08": "#a6acb9",  // light_black
+      "09": "#ec5f66",  // light_red
+      "10": "#99c794",  // light_green
+      "11": "#fac761",  // light_brown
+      "12": "#6699cc",  // light_blue
+      "13": "#c695c6",  // light_magenta
+      "14": "#5fb4b4",  // light_cyan
+      "15": "#ffffff"   // light_white
    }
 }
