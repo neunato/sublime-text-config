@@ -6,12 +6,11 @@
 	"installed_packages":
 	[
 		"Color Highlight",
-		"gruvbox",
 		"LESS",
 		"Package Control",
 		"PackageDev",
 		"PackageResourceViewer",
-		"Pigment",
+		"Pigment-package-control-fix",
 		"Sass",
 		"Svelte",
 		"Terminus",
@@ -20,6 +19,6 @@
 	],
 	"repositories":
 	[
-		"https://github.com/monkape/Pigment.git"
+		"https://github.com/monkape/Pigment-package-control-fix"
 	]
 }
