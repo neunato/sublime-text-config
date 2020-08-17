@@ -28,6 +28,7 @@
    "scroll_speed": 1.5,
    "tree_animation_enabled": false,
    "animation_enabled": false,
+   "highlight_modified_tabs": true,
    "show_tab_close_buttons": false,
    "bold_folder_labels": true,
    "overlay_scroll_bars": "disabled",
@@ -36,6 +37,7 @@
 
    // Application behaviour settings
    "remember_full_screen": true,
+   "git_diff_target": "head",
    "binary_file_patterns": ["node_modules/", "*.jpg", "*.jpeg", "*.png", "*.gif", "*.ttf", "*.tga", "*.dds", "*.ico", "*.eot", "*.pdf", "*.swf", "*.jar", "*.zip"],
    "index_exclude_patterns": ["node_modules/","*.log"],
 
