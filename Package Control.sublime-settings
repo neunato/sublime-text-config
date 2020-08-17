@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"Color Highlight",
 		"gruvbox",
 		"LESS",
 		"Package Control",
