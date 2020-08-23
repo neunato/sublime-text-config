@@ -10,15 +10,14 @@
 		"Package Control",
 		"PackageDev",
 		"PackageResourceViewer",
-		"Pigment-package-control-fix",
 		"Sass",
 		"Svelte",
 		"Terminus",
+		"Theme - Pigment",
 		"TypeScript Syntax",
 		"Vue Syntax Highlight"
 	],
 	"repositories":
 	[
-		"https://github.com/monkape/Pigment-package-control-fix"
 	]
 }
