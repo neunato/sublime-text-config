@@ -2,7 +2,7 @@
    "default_config": {
       "linux": "Bash",
       "osx": "Bash",
-      "windows": "PowerShell"
+      "windows": "PowerShell (ansicon)"
    },
 
    "shell_configs": [{
@@ -11,6 +11,12 @@
       "env": {},
       "enable": true,
       "platforms": ["linux", "osx"]
+   },{
+      "name": "PowerShell (ansicon)",
+      "cmd": "ansicon",
+      "env": {"COMSPEC": "pwsh.exe"},
+      "enable": true,
+      "platforms": ["windows"]
    },{
       "name": "PowerShell",
       "cmd": "pwsh.exe",
