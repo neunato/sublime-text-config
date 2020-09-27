@@ -5,7 +5,8 @@
 	],
 	"installed_packages":
 	[
-		"Color Highlight",
+		"ColorHelper",
+		"ColorPicker",
 		"LESS",
 		"Package Control",
 		"PackageDev",

@@ -1,0 +1,9 @@
+{
+   "click_color_box_to_pick": "color_picker",
+   "graphic_scale": 2.0,
+   "use_color_picker_package": true,
+   "enable_global_user_palettes": false,
+   "enable_favorite_palette": false,
+   "enable_current_file_palette": false,
+   "enable_project_user_palettes": false,
+}
