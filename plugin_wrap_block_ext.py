@@ -19,7 +19,7 @@ def indented_block(view, r):
    line = view.line(r)
    indent1 = view.indentation_level(line.b)
    indent2 = view.indentation_level(line.b + 1)
-   return indent1 == indent2 - 1
+   return indent1 < indent2
 
 
 class WrapBlockExtListener(EventListener):
@@ -56,6 +56,11 @@ class WrapBlockExt(TextCommand):
    characters, stopping at the first newline.
    """
    def run(self, edit, begin, end):
+      if len(begin) != 1:
+         raise Exception("'begin' must be a single character")
+      if len(end) != 1:
+         raise Exception("'end' must be a single character")
+
       view = self.view
       settings = view.settings()
 
@@ -73,33 +78,72 @@ class WrapBlockExt(TextCommand):
             continue
 
          size = view.size()
-         start = sel.a + offset
-         cursors.append(Region(start + 1))
+         block_a = sel.a + offset
+         block_b = block_a
+         cursors.append(Region(block_a + 1))
+
+         block_indent = view.indentation_level(block_a + 1)
 
          # detect block location and indentation level
-         block_indent = float("inf")
-         line = view.line(start + 1)
-         while not is_ws(view.substr(line)):
+         line = view.line(block_a + 1)
+         while True:
+            string = view.substr(line)
+
+            # break on empty line
+            if is_ws(string):
+               break
+
+            # break on indentation smaller than first line
             indent = view.indentation_level(line.a)
             if indent < block_indent:
-               block_indent = indent
+               if not (indent + 1 == block_indent and string.strip() == end):
+                  view.insert(edit, line.a, "\n")
+               break
+
+            # break on end of file
             if line.b == size:
                view.insert(edit, size, "\n")
+               break
+
+            # break if closing bracket found in block and is last char in line
+            i = 0
+            end_count = 0
+            for char in string:
+               if char == begin:
+                  end_count -= 1
+               elif char == end:
+                  end_count += 1
+               if end_count > 0:
+                  break
+               i += 1
+
+            end_line = string[i:].strip()
+            if end_count > 0 and len(end_line) == 1:
+               if end_line[0] != end:
+                  end_line = "\t" * (block_indent - 1)
+               else:
+                  end_line = "\n" + "\t" * (block_indent - 1)
+               view.insert(edit, line.a + i, end_line)
+               end = ""
+               break
+
+            # move to the next line
+            block_b = line.b
             line = view.line(line.b + 1)
 
          # no block follows, simply output begin and end characters
-         if block_indent == float("inf"):
-            view.insert(edit, start, begin + end)
+         if block_a == block_b:
+            view.insert(edit, block_a, begin + end)
             offset += len(begin) + len(end)
             continue
 
          # select block and adjust indentation
-         block = Region(start + 1, line.a - 1)
+         block = Region(block_a + 1, block_b)
          sels.clear()
          sels.add(block)
 
-         indent = view.indentation_level(start)
-         diff = block_indent - indent - 1
+         cursor_indent = view.indentation_level(block_a)
+         diff = block_indent - cursor_indent - 1
          if diff > 0:
             for i in range(diff):
                view.run_command("unindent")
@@ -107,12 +151,22 @@ class WrapBlockExt(TextCommand):
             for i in range(-diff):
                view.run_command("indent")
 
-         # wrap block with begin and end characters
-         view.run_command("move", {"by": "lines", "forward": True})
-         line = view.line(sels[0].a)
+         # wrap block with begin and end characters, keeping in mind that
+         # reindenting messed up the block region
+         view.run_command("move", {"by": "characters", "forward": True, "extend": True})
+         last_line = view.line(sels[0].b)
+         next_line = view.line(sels[0].b + 1)
 
-         view.replace(edit, line, "\t"*indent + end)
-         view.insert(edit, start, begin)
+         use_spaces = settings.get("translate_tabs_to_spaces")
+         if use_spaces:
+            tab_size = settings.get("tab_size")
+            end_line = tab_size * " " * cursor_indent + end
+         else:
+            end_line = "\t" * cursor_indent + end
+
+         if view.substr(next_line) != end_line:
+            view.replace(edit, last_line, "\t"*cursor_indent + end)
+         view.insert(edit, block_a, begin)
 
          # adjust selection offset
          offset += view.size() - size
